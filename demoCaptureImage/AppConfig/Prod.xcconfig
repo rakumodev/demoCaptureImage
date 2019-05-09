@@ -1,0 +1,12 @@
+//
+//  Prod.xcconfig
+//  demoCaptureImage
+//
+//  Created by phat nguyen on 5/8/19.
+//  Copyright © 2019 phatnt. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APP_NAME = demo Prod
