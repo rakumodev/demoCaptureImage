@@ -7,6 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37D8B8E121F9756D647469FA /* Pods_demoCaptureImageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578D749706C77FF6756774F5 /* Pods_demoCaptureImageUITests.framework */; };
+		7C7EDCBE90E8DFE0D164FD51 /* Pods_demoCaptureImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA726276AFE7EDA1C2D14E3 /* Pods_demoCaptureImage.framework */; };
+		D86ECD456336638535805DBD /* Pods_demoCaptureImageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E539B9E99C971E6AF719FCE /* Pods_demoCaptureImageTests.framework */; };
+		DA16D6572285252100CC30D7 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA16D6562285252100CC30D7 /* Environment.swift */; };
+		DA16D659228527CF00CC30D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA16D658228527CF00CC30D7 /* LoginViewController.swift */; };
+		DA1CBFCB228906800046B4D0 /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFCA228906800046B4D0 /* AlertUtils.swift */; };
+		DA1CBFCD228907A20046B4D0 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFCC228907A20046B4D0 /* UIWindowExtension.swift */; };
+		DA1CBFD22289229B0046B4D0 /* ActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFD12289229B0046B4D0 /* ActionModel.swift */; };
+		DA1CBFD42289242F0046B4D0 /* CaptureImageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFD32289242F0046B4D0 /* CaptureImageAction.swift */; };
+		DA1CBFD6228924F80046B4D0 /* OpenLibraryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFD5228924F80046B4D0 /* OpenLibraryAction.swift */; };
+		DA1CBFD8228925770046B4D0 /* LogoutAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFD7228925770046B4D0 /* LogoutAction.swift */; };
+		DA1CBFE622892A8C0046B4D0 /* CIRectangleDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFE522892A8C0046B4D0 /* CIRectangleDetector.swift */; };
+		DA1CBFE822892AA60046B4D0 /* VisionRectangleDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFE722892AA60046B4D0 /* VisionRectangleDetector.swift */; };
+		DA1CBFEA22892AC80046B4D0 /* Quadrilateral.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFE922892AC80046B4D0 /* Quadrilateral.swift */; };
+		DA1CBFEC22892AD60046B4D0 /* QuadrilateralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFEB22892AD60046B4D0 /* QuadrilateralView.swift */; };
+		DA1CBFEE22892AE50046B4D0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFED22892AE50046B4D0 /* Error.swift */; };
+		DA1CBFF022892AF10046B4D0 /* EditScanCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFEF22892AF10046B4D0 /* EditScanCornerView.swift */; };
+		DA1CBFF222892B9B0046B4D0 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFF122892B9B0046B4D0 /* ScannerViewController.swift */; };
+		DA1CBFF422892BAB0046B4D0 /* CaptureSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFF322892BAB0046B4D0 /* CaptureSessionManager.swift */; };
+		DA1CBFF622892BC30046B4D0 /* RectangleFeaturesFunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFF522892BC30046B4D0 /* RectangleFeaturesFunnel.swift */; };
+		DA1CBFF822892BCE0046B4D0 /* ShutterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFF722892BCE0046B4D0 /* ShutterButton.swift */; };
+		DA1CBFFA22892BDA0046B4D0 /* FocusRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFF922892BDA0046B4D0 /* FocusRectangleView.swift */; };
+		DA1CBFFC2289403F0046B4D0 /* EditScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFFB2289403F0046B4D0 /* EditScanViewController.swift */; };
+		DA1CBFFE2289404E0046B4D0 /* ZoomGestureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFFD2289404E0046B4D0 /* ZoomGestureController.swift */; };
+		DA1CC000228940DF0046B4D0 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFFF228940DE0046B4D0 /* ReviewViewController.swift */; };
+		DA1CC002228941240046B4D0 /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC001228941240046B4D0 /* CaptureSession.swift */; };
+		DA1CC004228941440046B4D0 /* CaptureSession+Flash.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC003228941440046B4D0 /* CaptureSession+Flash.swift */; };
+		DA1CC0062289416D0046B4D0 /* CaptureSession+Focus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC0052289416D0046B4D0 /* CaptureSession+Focus.swift */; };
+		DA1CC0082289418C0046B4D0 /* CaptureSession+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC0072289418C0046B4D0 /* CaptureSession+Orientation.swift */; };
+		DA1CC00A228941B10046B4D0 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC009228941B10046B4D0 /* Array+Utils.swift */; };
+		DA1CC00C228941CE0046B4D0 /* AVCaptureVideoOrientation+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC00B228941CE0046B4D0 /* AVCaptureVideoOrientation+Utils.swift */; };
+		DA1CC00E228941E30046B4D0 /* CGPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC00D228941E30046B4D0 /* CGPoint+Utils.swift */; };
+		DA1CC010228941F90046B4D0 /* CGAffineTransform+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC00F228941F90046B4D0 /* CGAffineTransform+Utils.swift */; };
+		DA1CC012228942110046B4D0 /* CGRect+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC011228942110046B4D0 /* CGRect+Utils.swift */; };
+		DA1CC014228942320046B4D0 /* CIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC013228942320046B4D0 /* CIImage+Utils.swift */; };
+		DA1CC016228942490046B4D0 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC015228942490046B4D0 /* UIImage+Utils.swift */; };
+		DA1CC018228942720046B4D0 /* UIImage+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC017228942720046B4D0 /* UIImage+Orientation.swift */; };
+		DA1CC01A228942DA0046B4D0 /* Transformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC019228942DA0046B4D0 /* Transformable.swift */; };
+		DA1CC01C2289430C0046B4D0 /* AVCaptureDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC01B2289430C0046B4D0 /* AVCaptureDeviceExtension.swift */; };
+		DA1CC01F2289435B0046B4D0 /* MockCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC01E2289435B0046B4D0 /* MockCaptureDevice.swift */; };
+		DA1CC021228943810046B4D0 /* ImageScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC020228943810046B4D0 /* ImageScannerController.swift */; };
 		DA80F40F2282D341004285F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA80F40E2282D341004285F9 /* Assets.xcassets */; };
 		DA80F41D2282D341004285F9 /* demoCaptureImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80F41C2282D341004285F9 /* demoCaptureImageTests.swift */; };
 		DA80F4282282D341004285F9 /* demoCaptureImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80F4272282D341004285F9 /* demoCaptureImageUITests.swift */; };
@@ -14,9 +55,11 @@
 		DA931AF2228405BD0047DC90 /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DA931AEF228405BD0047DC90 /* Dev.xcconfig */; };
 		DA931AF3228405BD0047DC90 /* Stagging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DA931AF0228405BD0047DC90 /* Stagging.xcconfig */; };
 		DA931AF82284061D0047DC90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA931AF72284061D0047DC90 /* AppDelegate.swift */; };
-		DA931AFA228406370047DC90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA931AF9228406370047DC90 /* ViewController.swift */; };
 		DA931AFD228406C70047DC90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA931AFB228406C70047DC90 /* Main.storyboard */; };
 		DA931AFE228406C70047DC90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA931AFC228406C70047DC90 /* LaunchScreen.storyboard */; };
+		DABEFFBC228563D8006127BF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABEFFBB228563D8006127BF /* UIColorExtension.swift */; };
+		DABEFFC02285737A006127BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABEFFBF2285737A006127BF /* HomeViewController.swift */; };
+		DABEFFC222857B6F006127BF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABEFFC122857B6F006127BF /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +80,62 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12D5AC381077DFA4A543DAB7 /* Pods-demoCaptureImageTests.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.release (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.release (dev).xcconfig"; sourceTree = "<group>"; };
+		2732FA86ECE1EF6A024EF68D /* Pods-demoCaptureImageTests.debug (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.debug (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.debug (prod).xcconfig"; sourceTree = "<group>"; };
+		3BE44FE84D4B3F03EEA0DDEA /* Pods-demoCaptureImageTests.release (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.release (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.release (stagging).xcconfig"; sourceTree = "<group>"; };
+		3C82977B1BB1018325D37196 /* Pods-demoCaptureImageTests.debug (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.debug (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.debug (stagging).xcconfig"; sourceTree = "<group>"; };
+		3D4AC34C628317A22F687A6F /* Pods-demoCaptureImageUITests.release (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.release (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.release (stagging).xcconfig"; sourceTree = "<group>"; };
+		4145088301833C41CF1D2087 /* Pods-demoCaptureImage.debug (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.debug (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.debug (stagging).xcconfig"; sourceTree = "<group>"; };
+		4644C1B0B6EFB5F577F1C8D0 /* Pods-demoCaptureImageUITests.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.release (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.release (prod).xcconfig"; sourceTree = "<group>"; };
+		53CACA20954414B977530D4C /* Pods-demoCaptureImageUITests.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.release (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.release (dev).xcconfig"; sourceTree = "<group>"; };
+		578D749706C77FF6756774F5 /* Pods_demoCaptureImageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoCaptureImageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DF0D3E2748E69E11B836CC2 /* Pods-demoCaptureImageUITests.debug (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.debug (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.debug (prod).xcconfig"; sourceTree = "<group>"; };
+		77BEA559724643675A745372 /* Pods-demoCaptureImageTests.debug (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.debug (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.debug (dev).xcconfig"; sourceTree = "<group>"; };
+		870F5D8B6A0E6A37A52B0E82 /* Pods-demoCaptureImage.debug (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.debug (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.debug (dev).xcconfig"; sourceTree = "<group>"; };
+		9B633DC8FF8289D51AF7B7F7 /* Pods-demoCaptureImageTests.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.release (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.release (prod).xcconfig"; sourceTree = "<group>"; };
+		9E539B9E99C971E6AF719FCE /* Pods_demoCaptureImageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoCaptureImageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A22719102131C31A49EDD3AA /* Pods-demoCaptureImageUITests.debug (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.debug (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.debug (dev).xcconfig"; sourceTree = "<group>"; };
+		BADB8C56A7AC172A8E8E0396 /* Pods-demoCaptureImage.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.release (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.release (prod).xcconfig"; sourceTree = "<group>"; };
+		C4A7775950898C36813972B5 /* Pods-demoCaptureImage.release (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.release (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.release (stagging).xcconfig"; sourceTree = "<group>"; };
+		D83F46A09E1B309B62398D5F /* Pods-demoCaptureImage.debug (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.debug (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.debug (prod).xcconfig"; sourceTree = "<group>"; };
+		DA16D6562285252100CC30D7 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		DA16D658228527CF00CC30D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DA1CBFCA228906800046B4D0 /* AlertUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtils.swift; sourceTree = "<group>"; };
+		DA1CBFCC228907A20046B4D0 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
+		DA1CBFD12289229B0046B4D0 /* ActionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionModel.swift; sourceTree = "<group>"; };
+		DA1CBFD32289242F0046B4D0 /* CaptureImageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureImageAction.swift; sourceTree = "<group>"; };
+		DA1CBFD5228924F80046B4D0 /* OpenLibraryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryAction.swift; sourceTree = "<group>"; };
+		DA1CBFD7228925770046B4D0 /* LogoutAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAction.swift; sourceTree = "<group>"; };
+		DA1CBFE522892A8C0046B4D0 /* CIRectangleDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIRectangleDetector.swift; sourceTree = "<group>"; };
+		DA1CBFE722892AA60046B4D0 /* VisionRectangleDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionRectangleDetector.swift; sourceTree = "<group>"; };
+		DA1CBFE922892AC80046B4D0 /* Quadrilateral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quadrilateral.swift; sourceTree = "<group>"; };
+		DA1CBFEB22892AD60046B4D0 /* QuadrilateralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadrilateralView.swift; sourceTree = "<group>"; };
+		DA1CBFED22892AE50046B4D0 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		DA1CBFEF22892AF10046B4D0 /* EditScanCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScanCornerView.swift; sourceTree = "<group>"; };
+		DA1CBFF122892B9B0046B4D0 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		DA1CBFF322892BAB0046B4D0 /* CaptureSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSessionManager.swift; sourceTree = "<group>"; };
+		DA1CBFF522892BC30046B4D0 /* RectangleFeaturesFunnel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleFeaturesFunnel.swift; sourceTree = "<group>"; };
+		DA1CBFF722892BCE0046B4D0 /* ShutterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShutterButton.swift; sourceTree = "<group>"; };
+		DA1CBFF922892BDA0046B4D0 /* FocusRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusRectangleView.swift; sourceTree = "<group>"; };
+		DA1CBFFB2289403F0046B4D0 /* EditScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScanViewController.swift; sourceTree = "<group>"; };
+		DA1CBFFD2289404E0046B4D0 /* ZoomGestureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomGestureController.swift; sourceTree = "<group>"; };
+		DA1CBFFF228940DE0046B4D0 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		DA1CC001228941240046B4D0 /* CaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
+		DA1CC003228941440046B4D0 /* CaptureSession+Flash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureSession+Flash.swift"; sourceTree = "<group>"; };
+		DA1CC0052289416D0046B4D0 /* CaptureSession+Focus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureSession+Focus.swift"; sourceTree = "<group>"; };
+		DA1CC0072289418C0046B4D0 /* CaptureSession+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureSession+Orientation.swift"; sourceTree = "<group>"; };
+		DA1CC009228941B10046B4D0 /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
+		DA1CC00B228941CE0046B4D0 /* AVCaptureVideoOrientation+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureVideoOrientation+Utils.swift"; sourceTree = "<group>"; };
+		DA1CC00D228941E30046B4D0 /* CGPoint+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Utils.swift"; sourceTree = "<group>"; };
+		DA1CC00F228941F90046B4D0 /* CGAffineTransform+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+Utils.swift"; sourceTree = "<group>"; };
+		DA1CC011228942110046B4D0 /* CGRect+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Utils.swift"; sourceTree = "<group>"; };
+		DA1CC013228942320046B4D0 /* CIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Utils.swift"; sourceTree = "<group>"; };
+		DA1CC015228942490046B4D0 /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
+		DA1CC017228942720046B4D0 /* UIImage+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Orientation.swift"; sourceTree = "<group>"; };
+		DA1CC019228942DA0046B4D0 /* Transformable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformable.swift; sourceTree = "<group>"; };
+		DA1CC01B2289430C0046B4D0 /* AVCaptureDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceExtension.swift; sourceTree = "<group>"; };
+		DA1CC01E2289435B0046B4D0 /* MockCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCaptureDevice.swift; sourceTree = "<group>"; };
+		DA1CC020228943810046B4D0 /* ImageScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScannerController.swift; sourceTree = "<group>"; };
 		DA80F4042282D33F004285F9 /* demoCaptureImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoCaptureImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA80F40E2282D341004285F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA80F4182282D341004285F9 /* demoCaptureImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoCaptureImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,9 +149,14 @@
 		DA931AEF228405BD0047DC90 /* Dev.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
 		DA931AF0228405BD0047DC90 /* Stagging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Stagging.xcconfig; sourceTree = "<group>"; };
 		DA931AF72284061D0047DC90 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA931AF9228406370047DC90 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA931AFB228406C70047DC90 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DA931AFC228406C70047DC90 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DABEFFBB228563D8006127BF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		DABEFFBF2285737A006127BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DABEFFC122857B6F006127BF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		DCA726276AFE7EDA1C2D14E3 /* Pods_demoCaptureImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoCaptureImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFB7D9D28750B6E8B95D0A49 /* Pods-demoCaptureImageUITests.debug (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.debug (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.debug (stagging).xcconfig"; sourceTree = "<group>"; };
+		F5115140142912F7D623A7EC /* Pods-demoCaptureImage.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.release (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.release (dev).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C7EDCBE90E8DFE0D164FD51 /* Pods_demoCaptureImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86ECD456336638535805DBD /* Pods_demoCaptureImageTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +180,184 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D8B8E121F9756D647469FA /* Pods_demoCaptureImageUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76285B124D986EE1F3D04C9C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				870F5D8B6A0E6A37A52B0E82 /* Pods-demoCaptureImage.debug (dev).xcconfig */,
+				4145088301833C41CF1D2087 /* Pods-demoCaptureImage.debug (stagging).xcconfig */,
+				D83F46A09E1B309B62398D5F /* Pods-demoCaptureImage.debug (prod).xcconfig */,
+				F5115140142912F7D623A7EC /* Pods-demoCaptureImage.release (dev).xcconfig */,
+				C4A7775950898C36813972B5 /* Pods-demoCaptureImage.release (stagging).xcconfig */,
+				BADB8C56A7AC172A8E8E0396 /* Pods-demoCaptureImage.release (prod).xcconfig */,
+				77BEA559724643675A745372 /* Pods-demoCaptureImageTests.debug (dev).xcconfig */,
+				3C82977B1BB1018325D37196 /* Pods-demoCaptureImageTests.debug (stagging).xcconfig */,
+				2732FA86ECE1EF6A024EF68D /* Pods-demoCaptureImageTests.debug (prod).xcconfig */,
+				12D5AC381077DFA4A543DAB7 /* Pods-demoCaptureImageTests.release (dev).xcconfig */,
+				3BE44FE84D4B3F03EEA0DDEA /* Pods-demoCaptureImageTests.release (stagging).xcconfig */,
+				9B633DC8FF8289D51AF7B7F7 /* Pods-demoCaptureImageTests.release (prod).xcconfig */,
+				A22719102131C31A49EDD3AA /* Pods-demoCaptureImageUITests.debug (dev).xcconfig */,
+				DFB7D9D28750B6E8B95D0A49 /* Pods-demoCaptureImageUITests.debug (stagging).xcconfig */,
+				6DF0D3E2748E69E11B836CC2 /* Pods-demoCaptureImageUITests.debug (prod).xcconfig */,
+				53CACA20954414B977530D4C /* Pods-demoCaptureImageUITests.release (dev).xcconfig */,
+				3D4AC34C628317A22F687A6F /* Pods-demoCaptureImageUITests.release (stagging).xcconfig */,
+				4644C1B0B6EFB5F577F1C8D0 /* Pods-demoCaptureImageUITests.release (prod).xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		792D16EFBD6DB2A2320B6AD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCA726276AFE7EDA1C2D14E3 /* Pods_demoCaptureImage.framework */,
+				9E539B9E99C971E6AF719FCE /* Pods_demoCaptureImageTests.framework */,
+				578D749706C77FF6756774F5 /* Pods_demoCaptureImageUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA16D655228524FE00CC30D7 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				DA16D6562285252100CC30D7 /* Environment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		DA1CBFC9228906720046B4D0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CBFCA228906800046B4D0 /* AlertUtils.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		DA1CBFD0228922820046B4D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CBFD12289229B0046B4D0 /* ActionModel.swift */,
+				DA1CBFD32289242F0046B4D0 /* CaptureImageAction.swift */,
+				DA1CBFD5228924F80046B4D0 /* OpenLibraryAction.swift */,
+				DA1CBFD7228925770046B4D0 /* LogoutAction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA1CBFDC2289298B0046B4D0 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CBFDD228929C80046B4D0 /* BusinessCardScanner */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		DA1CBFDD228929C80046B4D0 /* BusinessCardScanner */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CC01D2289433F0046B4D0 /* Device */,
+				DA1CBFE422892A760046B4D0 /* Common */,
+				DA1CBFDF22892A760046B4D0 /* Controller */,
+				DA1CBFDE22892A760046B4D0 /* Extension */,
+				DA1CBFE322892A760046B4D0 /* Session */,
+			);
+			path = BusinessCardScanner;
+			sourceTree = "<group>";
+		};
+		DA1CBFDE22892A760046B4D0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CC009228941B10046B4D0 /* Array+Utils.swift */,
+				DA1CC00B228941CE0046B4D0 /* AVCaptureVideoOrientation+Utils.swift */,
+				DA1CC00D228941E30046B4D0 /* CGPoint+Utils.swift */,
+				DA1CC00F228941F90046B4D0 /* CGAffineTransform+Utils.swift */,
+				DA1CC011228942110046B4D0 /* CGRect+Utils.swift */,
+				DA1CC013228942320046B4D0 /* CIImage+Utils.swift */,
+				DA1CC015228942490046B4D0 /* UIImage+Utils.swift */,
+				DA1CC017228942720046B4D0 /* UIImage+Orientation.swift */,
+				DA1CC019228942DA0046B4D0 /* Transformable.swift */,
+				DA1CC01B2289430C0046B4D0 /* AVCaptureDeviceExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DA1CBFDF22892A760046B4D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CBFE022892A760046B4D0 /* Scan */,
+				DA1CBFE122892A760046B4D0 /* Edit */,
+				DA1CBFE222892A760046B4D0 /* Review */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DA1CBFE022892A760046B4D0 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CBFF122892B9B0046B4D0 /* ScannerViewController.swift */,
+				DA1CBFF322892BAB0046B4D0 /* CaptureSessionManager.swift */,
+				DA1CBFF522892BC30046B4D0 /* RectangleFeaturesFunnel.swift */,
+				DA1CBFF722892BCE0046B4D0 /* ShutterButton.swift */,
+				DA1CBFF922892BDA0046B4D0 /* FocusRectangleView.swift */,
+				DA1CC020228943810046B4D0 /* ImageScannerController.swift */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		DA1CBFE122892A760046B4D0 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CBFFB2289403F0046B4D0 /* EditScanViewController.swift */,
+				DA1CBFFD2289404E0046B4D0 /* ZoomGestureController.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		DA1CBFE222892A760046B4D0 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CBFFF228940DE0046B4D0 /* ReviewViewController.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		DA1CBFE322892A760046B4D0 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CC001228941240046B4D0 /* CaptureSession.swift */,
+				DA1CC003228941440046B4D0 /* CaptureSession+Flash.swift */,
+				DA1CC0052289416D0046B4D0 /* CaptureSession+Focus.swift */,
+				DA1CC0072289418C0046B4D0 /* CaptureSession+Orientation.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		DA1CBFE422892A760046B4D0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CBFE522892A8C0046B4D0 /* CIRectangleDetector.swift */,
+				DA1CBFE722892AA60046B4D0 /* VisionRectangleDetector.swift */,
+				DA1CBFE922892AC80046B4D0 /* Quadrilateral.swift */,
+				DA1CBFEB22892AD60046B4D0 /* QuadrilateralView.swift */,
+				DA1CBFED22892AE50046B4D0 /* Error.swift */,
+				DA1CBFEF22892AF10046B4D0 /* EditScanCornerView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DA1CC01D2289433F0046B4D0 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				DA1CC01E2289435B0046B4D0 /* MockCaptureDevice.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
 		DA80F3FB2282D33F004285F9 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +366,8 @@
 				DA80F41B2282D341004285F9 /* demoCaptureImageTests */,
 				DA80F4262282D341004285F9 /* demoCaptureImageUITests */,
 				DA80F4052282D33F004285F9 /* Products */,
+				76285B124D986EE1F3D04C9C /* Pods */,
+				792D16EFBD6DB2A2320B6AD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +384,12 @@
 		DA80F4062282D33F004285F9 /* demoCaptureImage */ = {
 			isa = PBXGroup;
 			children = (
+				DA1CBFDC2289298B0046B4D0 /* Module */,
+				DA1CBFD0228922820046B4D0 /* Model */,
+				DA1CBFC9228906720046B4D0 /* Util */,
+				DABEFFC122857B6F006127BF /* Constant.swift */,
+				DABEFFBA228563CB006127BF /* Extension */,
+				DA16D655228524FE00CC30D7 /* Environment */,
 				DA931AF5228405FD0047DC90 /* App */,
 				DA931AF4228405FD0047DC90 /* Controller */,
 				DA931AF6228405FD0047DC90 /* Storyboard */,
@@ -144,7 +430,8 @@
 		DA931AF4228405FD0047DC90 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DA931AF9228406370047DC90 /* ViewController.swift */,
+				DA16D658228527CF00CC30D7 /* LoginViewController.swift */,
+				DABEFFBF2285737A006127BF /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,6 +453,15 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		DABEFFBA228563CB006127BF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DABEFFBB228563D8006127BF /* UIColorExtension.swift */,
+				DA1CBFCC228907A20046B4D0 /* UIWindowExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,9 +469,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA80F42C2282D341004285F9 /* Build configuration list for PBXNativeTarget "demoCaptureImage" */;
 			buildPhases = (
+				F38538D00FF0B7963248FFEE /* [CP] Check Pods Manifest.lock */,
 				DA80F4002282D33F004285F9 /* Sources */,
 				DA80F4012282D33F004285F9 /* Frameworks */,
 				DA80F4022282D33F004285F9 /* Resources */,
+				B3A9D23E9A53216C2EB4D652 /* [CP] Embed Pods Frameworks */,
+				5B28E07BC61087E5553675D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,6 +489,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA80F42F2282D341004285F9 /* Build configuration list for PBXNativeTarget "demoCaptureImageTests" */;
 			buildPhases = (
+				6E804D2A1B683BAB0D167DF4 /* [CP] Check Pods Manifest.lock */,
 				DA80F4142282D341004285F9 /* Sources */,
 				DA80F4152282D341004285F9 /* Frameworks */,
 				DA80F4162282D341004285F9 /* Resources */,
@@ -208,6 +508,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA80F4322282D341004285F9 /* Build configuration list for PBXNativeTarget "demoCaptureImageUITests" */;
 			buildPhases = (
+				26CB5B494D9E6344DAA3A990 /* [CP] Check Pods Manifest.lock */,
 				DA80F41F2282D341004285F9 /* Sources */,
 				DA80F4202282D341004285F9 /* Frameworks */,
 				DA80F4212282D341004285F9 /* Resources */,
@@ -295,13 +596,172 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26CB5B494D9E6344DAA3A990 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-demoCaptureImageUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B28E07BC61087E5553675D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E804D2A1B683BAB0D167DF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-demoCaptureImageTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3A9D23E9A53216C2EB4D652 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F38538D00FF0B7963248FFEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-demoCaptureImage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DA80F4002282D33F004285F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA931AFA228406370047DC90 /* ViewController.swift in Sources */,
+				DA1CBFF622892BC30046B4D0 /* RectangleFeaturesFunnel.swift in Sources */,
+				DABEFFC02285737A006127BF /* HomeViewController.swift in Sources */,
+				DA1CC000228940DF0046B4D0 /* ReviewViewController.swift in Sources */,
+				DA1CBFE822892AA60046B4D0 /* VisionRectangleDetector.swift in Sources */,
+				DA1CBFD8228925770046B4D0 /* LogoutAction.swift in Sources */,
+				DA1CC014228942320046B4D0 /* CIImage+Utils.swift in Sources */,
+				DA1CBFF222892B9B0046B4D0 /* ScannerViewController.swift in Sources */,
+				DA16D659228527CF00CC30D7 /* LoginViewController.swift in Sources */,
+				DA1CBFEA22892AC80046B4D0 /* Quadrilateral.swift in Sources */,
+				DA1CC00E228941E30046B4D0 /* CGPoint+Utils.swift in Sources */,
+				DA1CC016228942490046B4D0 /* UIImage+Utils.swift in Sources */,
+				DA16D6572285252100CC30D7 /* Environment.swift in Sources */,
 				DA931AF82284061D0047DC90 /* AppDelegate.swift in Sources */,
+				DA1CC01A228942DA0046B4D0 /* Transformable.swift in Sources */,
+				DA1CC00C228941CE0046B4D0 /* AVCaptureVideoOrientation+Utils.swift in Sources */,
+				DA1CC01F2289435B0046B4D0 /* MockCaptureDevice.swift in Sources */,
+				DA1CC0062289416D0046B4D0 /* CaptureSession+Focus.swift in Sources */,
+				DA1CC012228942110046B4D0 /* CGRect+Utils.swift in Sources */,
+				DA1CC004228941440046B4D0 /* CaptureSession+Flash.swift in Sources */,
+				DA1CBFD6228924F80046B4D0 /* OpenLibraryAction.swift in Sources */,
+				DA1CC018228942720046B4D0 /* UIImage+Orientation.swift in Sources */,
+				DA1CBFEC22892AD60046B4D0 /* QuadrilateralView.swift in Sources */,
+				DA1CBFFA22892BDA0046B4D0 /* FocusRectangleView.swift in Sources */,
+				DA1CBFEE22892AE50046B4D0 /* Error.swift in Sources */,
+				DA1CC021228943810046B4D0 /* ImageScannerController.swift in Sources */,
+				DA1CBFCB228906800046B4D0 /* AlertUtils.swift in Sources */,
+				DA1CBFF822892BCE0046B4D0 /* ShutterButton.swift in Sources */,
+				DA1CC0082289418C0046B4D0 /* CaptureSession+Orientation.swift in Sources */,
+				DA1CBFE622892A8C0046B4D0 /* CIRectangleDetector.swift in Sources */,
+				DA1CBFD22289229B0046B4D0 /* ActionModel.swift in Sources */,
+				DA1CBFFC2289403F0046B4D0 /* EditScanViewController.swift in Sources */,
+				DA1CBFCD228907A20046B4D0 /* UIWindowExtension.swift in Sources */,
+				DA1CBFF022892AF10046B4D0 /* EditScanCornerView.swift in Sources */,
+				DABEFFBC228563D8006127BF /* UIColorExtension.swift in Sources */,
+				DA1CBFF422892BAB0046B4D0 /* CaptureSessionManager.swift in Sources */,
+				DA1CC01C2289430C0046B4D0 /* AVCaptureDeviceExtension.swift in Sources */,
+				DA1CBFFE2289404E0046B4D0 /* ZoomGestureController.swift in Sources */,
+				DA1CC010228941F90046B4D0 /* CGAffineTransform+Utils.swift in Sources */,
+				DA1CC00A228941B10046B4D0 /* Array+Utils.swift in Sources */,
+				DA1CBFD42289242F0046B4D0 /* CaptureImageAction.swift in Sources */,
+				DABEFFC222857B6F006127BF /* Constant.swift in Sources */,
+				DA1CC002228941240046B4D0 /* CaptureSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +921,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJFV9RP76W;
 				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,7 +941,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJFV9RP76W;
 				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,6 +957,7 @@
 		};
 		DA80F4302282D341004285F9 /* Debug (Dev) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77BEA559724643675A745372 /* Pods-demoCaptureImageTests.debug (dev).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -513,6 +978,7 @@
 		};
 		DA80F4312282D341004285F9 /* Release (Dev) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12D5AC381077DFA4A543DAB7 /* Pods-demoCaptureImageTests.release (dev).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -533,6 +999,7 @@
 		};
 		DA80F4332282D341004285F9 /* Debug (Dev) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A22719102131C31A49EDD3AA /* Pods-demoCaptureImageUITests.debug (dev).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -552,6 +1019,7 @@
 		};
 		DA80F4342282D341004285F9 /* Release (Dev) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53CACA20954414B977530D4C /* Pods-demoCaptureImageUITests.release (dev).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -637,7 +1105,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJFV9RP76W;
 				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -651,6 +1121,7 @@
 		};
 		DA80F4372282D39B004285F9 /* Debug (Stagging) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C82977B1BB1018325D37196 /* Pods-demoCaptureImageTests.debug (stagging).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -671,6 +1142,7 @@
 		};
 		DA80F4382282D39B004285F9 /* Debug (Stagging) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFB7D9D28750B6E8B95D0A49 /* Pods-demoCaptureImageUITests.debug (stagging).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -750,7 +1222,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJFV9RP76W;
 				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -764,6 +1238,7 @@
 		};
 		DA80F43B2282D3A8004285F9 /* Release (Stagging) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BE44FE84D4B3F03EEA0DDEA /* Pods-demoCaptureImageTests.release (stagging).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -784,6 +1259,7 @@
 		};
 		DA80F43C2282D3A8004285F9 /* Release (Stagging) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D4AC34C628317A22F687A6F /* Pods-demoCaptureImageUITests.release (stagging).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -869,7 +1345,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJFV9RP76W;
 				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -883,6 +1361,7 @@
 		};
 		DA80F43F2282D3B0004285F9 /* Debug (Prod) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2732FA86ECE1EF6A024EF68D /* Pods-demoCaptureImageTests.debug (prod).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -903,6 +1382,7 @@
 		};
 		DA80F4402282D3B0004285F9 /* Debug (Prod) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DF0D3E2748E69E11B836CC2 /* Pods-demoCaptureImageUITests.debug (prod).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -982,7 +1462,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJFV9RP76W;
 				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -996,6 +1478,7 @@
 		};
 		DA80F4432282D3C8004285F9 /* Release (Prod) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B633DC8FF8289D51AF7B7F7 /* Pods-demoCaptureImageTests.release (prod).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1016,6 +1499,7 @@
 		};
 		DA80F4442282D3C8004285F9 /* Release (Prod) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4644C1B0B6EFB5F577F1C8D0 /* Pods-demoCaptureImageUITests.release (prod).xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

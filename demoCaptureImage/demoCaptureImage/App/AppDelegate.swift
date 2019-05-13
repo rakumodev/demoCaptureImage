@@ -7,16 +7,43 @@
 //
 
 import UIKit
+import GoogleSignIn
+import AFNetworking
+import ProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var loginScreen: LoginViewController!
+    var homeScreen: HomeViewController!
+    let mainStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Initialize sign-in
+        GIDSignIn.sharedInstance().clientID = Constant.GOOGLE_CLIENT_ID
+        GIDSignIn.sharedInstance().delegate = self
+
+        //Perform check if user has already logged in yet
+        if UserDefaults.standard.bool(forKey: Constant.LOGGED_IN) {
+            //If true then app directly navigates to home screen
+            let homeViewController = mainStoryBoard.instantiateViewController(withIdentifier: Constant.HOME_SCREEN_IDENTIFER)
+            let homeScreenNav = UINavigationController.init(rootViewController: homeViewController)
+            self.window?.rootViewController = homeScreenNav
+        }
+        else {
+            //If false then app navigates to login screen
+            let logInViewController = mainStoryBoard.instantiateViewController(withIdentifier: Constant.LOGIN_SCREEN_IDENTIFER)
+            let logInNav = UINavigationController.init(rootViewController: logInViewController)
+            self.window?.rootViewController = logInNav
+        }
+        
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url as URL?, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -41,6 +68,79 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
 
+extension AppDelegate: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        ProgressHUD.show()
+        DispatchQueue.global(qos: .userInteractive).async {
+            if let error = error {
+                //Authentication error
+                ProgressHUD.dismiss()
+                AlertUtils.showSimpleAlertView(with: "Error", message: error.localizedDescription)
+                print("\(error.localizedDescription)")
+            }
+            else {
+                //Authenticate with our server after signed in user.
+                let idToken = user.authentication.idToken
+                let imageURL = user.profile.imageURL(withDimension: 48)
+                //Prepare json data
+                let params = ["idToken":idToken ?? "",
+                              "imageURL":imageURL?.absoluteString ?? ""]
+                //Create multipart data request
+                let request = AFHTTPRequestSerializer().multipartFormRequest(withMethod: RequestMethod.POST.rawValue, urlString: Constant.SEVER_API_URL, parameters: params, constructingBodyWith: { (formData) in
+                    print("Processed multipart request")
+                }, error: nil)
+                let manager = AFURLSessionManager.init(sessionConfiguration: .default)
+                let uploadTask = manager.uploadTask(withStreamedRequest: request as URLRequest, progress: nil) { (response, data, error) in
+                    if error == nil {
+                        guard let data = data else {
+                            //Show error message
+                            ProgressHUD.dismiss()
+                            AlertUtils.showSimpleAlertView(with: "Error", message: error!.localizedDescription)
+                            print(error!.localizedDescription)
+                            return
+                        }
+                        if let responseJSON = data as? [String:Any] {
+                            print(responseJSON)
+                            if let statusCode = responseJSON["statusCode"] as! Int?, statusCode == 200 {
+                                print("Login successfully")
+                                ProgressHUD.dismiss()
+                                UserDefaults.standard.set(true, forKey: Constant.LOGGED_IN)
+                                //Navigate to home screen after authenticate with server successfully
+                                DispatchQueue.main.async {
+                                    let mainStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                                    let homeViewController = mainStoryBoard.instantiateViewController(withIdentifier: Constant.HOME_SCREEN_IDENTIFER)
+                                    let homeScreenNav = UINavigationController.init(rootViewController: homeViewController)
+                                    self.window?.rootViewController = homeScreenNav
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        //Show error message
+                        ProgressHUD.dismiss()
+                        AlertUtils.showSimpleAlertView(with: "Error", message: error!.localizedDescription)
+                        print(error!.localizedDescription)
+                    }
+                }
+                uploadTask.resume()
+            }
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        //Perform operations when the user disconnects from app here.
+        
+    }
+    
+}
+
+extension AppDelegate {
+    
+    class func sharedInstance() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+}
