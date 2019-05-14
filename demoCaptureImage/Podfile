@@ -7,8 +7,9 @@ target 'demoCaptureImage' do
   
   # Pods for demoCaptureImage
   pod 'GoogleSignIn'
-  pod 'AFNetworking', '~> 3.0'
   pod 'ProgressHUD'
+  pod 'SwiftLint'
+  pod 'Alamofire', '~> 5.0.0-beta.5'
 
   target 'demoCaptureImageTests' do
     inherit! :search_paths

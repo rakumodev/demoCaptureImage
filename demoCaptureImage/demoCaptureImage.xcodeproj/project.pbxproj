@@ -48,6 +48,9 @@
 		DA1CC01C2289430C0046B4D0 /* AVCaptureDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC01B2289430C0046B4D0 /* AVCaptureDeviceExtension.swift */; };
 		DA1CC01F2289435B0046B4D0 /* MockCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC01E2289435B0046B4D0 /* MockCaptureDevice.swift */; };
 		DA1CC021228943810046B4D0 /* ImageScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC020228943810046B4D0 /* ImageScannerController.swift */; };
+		DA28551D228A4AF700585A3F /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28551C228A4AF600585A3F /* GlobalConstant.swift */; };
+		DA285527228A4CD600585A3F /* ConstantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA285525228A4CD600585A3F /* ConstantAPI.swift */; };
+		DA285529228A4D0D00585A3F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA285528228A4D0D00585A3F /* APIManager.swift */; };
 		DA80F40F2282D341004285F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA80F40E2282D341004285F9 /* Assets.xcassets */; };
 		DA80F41D2282D341004285F9 /* demoCaptureImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80F41C2282D341004285F9 /* demoCaptureImageTests.swift */; };
 		DA80F4282282D341004285F9 /* demoCaptureImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80F4272282D341004285F9 /* demoCaptureImageUITests.swift */; };
@@ -59,7 +62,6 @@
 		DA931AFE228406C70047DC90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA931AFC228406C70047DC90 /* LaunchScreen.storyboard */; };
 		DABEFFBC228563D8006127BF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABEFFBB228563D8006127BF /* UIColorExtension.swift */; };
 		DABEFFC02285737A006127BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABEFFBF2285737A006127BF /* HomeViewController.swift */; };
-		DABEFFC222857B6F006127BF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABEFFC122857B6F006127BF /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,9 @@
 		DA1CC01B2289430C0046B4D0 /* AVCaptureDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceExtension.swift; sourceTree = "<group>"; };
 		DA1CC01E2289435B0046B4D0 /* MockCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCaptureDevice.swift; sourceTree = "<group>"; };
 		DA1CC020228943810046B4D0 /* ImageScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScannerController.swift; sourceTree = "<group>"; };
+		DA28551C228A4AF600585A3F /* GlobalConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
+		DA285525228A4CD600585A3F /* ConstantAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantAPI.swift; sourceTree = "<group>"; };
+		DA285528228A4D0D00585A3F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		DA80F4042282D33F004285F9 /* demoCaptureImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoCaptureImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA80F40E2282D341004285F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA80F4182282D341004285F9 /* demoCaptureImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoCaptureImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +158,6 @@
 		DA931AFC228406C70047DC90 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DABEFFBB228563D8006127BF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DABEFFBF2285737A006127BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		DABEFFC122857B6F006127BF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DCA726276AFE7EDA1C2D14E3 /* Pods_demoCaptureImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoCaptureImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB7D9D28750B6E8B95D0A49 /* Pods-demoCaptureImageUITests.debug (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.debug (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.debug (stagging).xcconfig"; sourceTree = "<group>"; };
 		F5115140142912F7D623A7EC /* Pods-demoCaptureImage.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.release (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.release (dev).xcconfig"; sourceTree = "<group>"; };
@@ -358,6 +362,15 @@
 			path = Device;
 			sourceTree = "<group>";
 		};
+		DA285523228A4CD600585A3F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DA285528228A4D0D00585A3F /* APIManager.swift */,
+				DA285525228A4CD600585A3F /* ConstantAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		DA80F3FB2282D33F004285F9 = {
 			isa = PBXGroup;
 			children = (
@@ -384,10 +397,11 @@
 		DA80F4062282D33F004285F9 /* demoCaptureImage */ = {
 			isa = PBXGroup;
 			children = (
+				DA285523228A4CD600585A3F /* API */,
+				DA28551C228A4AF600585A3F /* GlobalConstant.swift */,
 				DA1CBFDC2289298B0046B4D0 /* Module */,
 				DA1CBFD0228922820046B4D0 /* Model */,
 				DA1CBFC9228906720046B4D0 /* Util */,
-				DABEFFC122857B6F006127BF /* Constant.swift */,
 				DABEFFBA228563CB006127BF /* Extension */,
 				DA16D655228524FE00CC30D7 /* Environment */,
 				DA931AF5228405FD0047DC90 /* App */,
@@ -672,7 +686,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
@@ -681,7 +695,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
@@ -724,6 +738,7 @@
 				DABEFFC02285737A006127BF /* HomeViewController.swift in Sources */,
 				DA1CC000228940DF0046B4D0 /* ReviewViewController.swift in Sources */,
 				DA1CBFE822892AA60046B4D0 /* VisionRectangleDetector.swift in Sources */,
+				DA285529228A4D0D00585A3F /* APIManager.swift in Sources */,
 				DA1CBFD8228925770046B4D0 /* LogoutAction.swift in Sources */,
 				DA1CC014228942320046B4D0 /* CIImage+Utils.swift in Sources */,
 				DA1CBFF222892B9B0046B4D0 /* ScannerViewController.swift in Sources */,
@@ -750,6 +765,7 @@
 				DA1CC0082289418C0046B4D0 /* CaptureSession+Orientation.swift in Sources */,
 				DA1CBFE622892A8C0046B4D0 /* CIRectangleDetector.swift in Sources */,
 				DA1CBFD22289229B0046B4D0 /* ActionModel.swift in Sources */,
+				DA28551D228A4AF700585A3F /* GlobalConstant.swift in Sources */,
 				DA1CBFFC2289403F0046B4D0 /* EditScanViewController.swift in Sources */,
 				DA1CBFCD228907A20046B4D0 /* UIWindowExtension.swift in Sources */,
 				DA1CBFF022892AF10046B4D0 /* EditScanCornerView.swift in Sources */,
@@ -758,9 +774,9 @@
 				DA1CC01C2289430C0046B4D0 /* AVCaptureDeviceExtension.swift in Sources */,
 				DA1CBFFE2289404E0046B4D0 /* ZoomGestureController.swift in Sources */,
 				DA1CC010228941F90046B4D0 /* CGAffineTransform+Utils.swift in Sources */,
+				DA285527228A4CD600585A3F /* ConstantAPI.swift in Sources */,
 				DA1CC00A228941B10046B4D0 /* Array+Utils.swift in Sources */,
 				DA1CBFD42289242F0046B4D0 /* CaptureImageAction.swift in Sources */,
-				DABEFFC222857B6F006127BF /* Constant.swift in Sources */,
 				DA1CC002228941240046B4D0 /* CaptureSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

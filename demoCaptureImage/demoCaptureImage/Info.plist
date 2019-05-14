@@ -8,8 +8,6 @@
 	<string>Used to scan images.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Used to select images from your Photo Library.</string>
-	<key>BACKGROUND_COLOR</key>
-	<string>$(BACKGROUND_COLOR)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -37,8 +35,6 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LABEL_COLOR</key>
-	<string>$(LABEL_COLOR)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -62,5 +58,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LABEL_COLOR</key>
+	<string>$(LABEL_COLOR)</string>
+	<key>SERVER_URL</key>
+	<string>http://$(SERVER_URL)</string>
+	<key>BACKGROUND_COLOR</key>
+	<string>$(BACKGROUND_COLOR)</string>
 </dict>
 </plist>

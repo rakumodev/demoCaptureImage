@@ -11,12 +11,15 @@ import Foundation
 enum PlistKey {
     case LABEL_COLOR
     case BACKGROUND_COLOR
+    case SERVER_URL
     var value: String {
         switch self {
         case .LABEL_COLOR:
             return "LABEL_COLOR"
         case .BACKGROUND_COLOR:
             return "BACKGROUND_COLOR"
+        case .SERVER_URL:
+            return "SERVER_URL"
         }
     }
 }
@@ -38,6 +41,8 @@ struct Environment {
             return infoDict[PlistKey.LABEL_COLOR.value] as! String
         case .BACKGROUND_COLOR:
             return infoDict[PlistKey.BACKGROUND_COLOR.value] as! String
+        case .SERVER_URL:
+            return infoDict[PlistKey.SERVER_URL.value] as! String
         }
     }
 }

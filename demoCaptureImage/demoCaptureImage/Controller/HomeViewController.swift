@@ -26,9 +26,9 @@ class HomeViewController: UITableViewController {
     
     func userClickLogout() {
         GIDSignIn.sharedInstance().signOut()
-        UserDefaults.standard.set(false, forKey: Constant.LOGGED_IN)
+        UserDefaults.standard.set(false, forKey: GlobalConstant.LOGGED_IN)
         DispatchQueue.main.async {
-            let loginViewController = AppDelegate.sharedInstance().mainStoryBoard.instantiateViewController(withIdentifier: Constant.LOGIN_SCREEN_IDENTIFER)
+            let loginViewController = AppDelegate.sharedInstance().mainStoryBoard.instantiateViewController(withIdentifier: GlobalConstant.LOGIN_SCREEN_IDENTIFER)
             let loginScreenNav = UINavigationController.init(rootViewController: loginViewController)
             AppDelegate.sharedInstance().window?.rootViewController = loginScreenNav
             print("Logout successfully")
@@ -113,30 +113,36 @@ extension HomeViewController: ImageScannerControllerDelegate {
     }
     
     func imageScannerController(_ scanner: ImageScannerController, didFinishScanningWithResults results: ImageScannerResults) {
-        DispatchQueue.main.async {
-            guard let scannedImage = results.scannedImage as UIImage? else {
+        guard let scannedImage = results.scannedImage as UIImage? else {
+            DispatchQueue.main.async {
                 scanner.dismiss(animated: true, completion: nil)
-                return
             }
-            //Saving image
-            UIImageWriteToSavedPhotosAlbum(scannedImage, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+            return
+        }
+        //Saving image
+        UIImageWriteToSavedPhotosAlbum(scannedImage, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+        DispatchQueue.main.async {
             scanner.dismiss(animated: true, completion: nil)
         }
     }
     
     //Add image to library
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            // we got back an error!
-            AlertUtils.showSimpleAlertView(with: "Save error", message: error.localizedDescription)
-        } else {
-            AlertUtils.showSimpleAlertView(with: "Saved!", message: "Scanned image has been saved")
+        DispatchQueue.main.async {
+            if let error = error {
+                // we got back an error!
+                AlertUtils.showSimpleAlertView(with: "Save error", message: error.localizedDescription)
+            } else {
+                AlertUtils.showSimpleAlertView(with: "Saved!", message: "Scanned image has been saved")
+            }
         }
     }
 
     
     func imageScannerController(_ scanner: ImageScannerController, didFailWithError error: Error) {
-        AlertUtils.showSimpleAlertView(with: "Error", message: error.localizedDescription)
+        DispatchQueue.main.async {
+            AlertUtils.showSimpleAlertView(with: "Error", message: error.localizedDescription)
+        }
         print(error)
     }
     
@@ -152,8 +158,8 @@ extension HomeViewController: UIImagePickerControllerDelegate,UINavigationContro
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
         DispatchQueue.main.async {
+            picker.dismiss(animated: true, completion: nil)
             guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
             let scannerViewController = ImageScannerController.init(image: image, delegate: self)
             self.present(scannerViewController, animated: true, completion: nil)
