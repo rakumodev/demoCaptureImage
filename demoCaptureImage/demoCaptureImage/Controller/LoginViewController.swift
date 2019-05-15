@@ -59,15 +59,14 @@ extension LoginViewController: GIDSignInDelegate {
                 //Authentication error
                 DispatchQueue.main.async {
                     ProgressHUD.dismiss()
-                    AlertUtils.showSimpleAlertView(with: "Error", message: error.localizedDescription)
+                    AlertUtils.showSimpleAlertView(with: "Error", message: error.localizedDescription, self)
                 }
                 print("\(error.localizedDescription)")
             } else {
                 //Authenticate with our server after signed in user.
-                let idToken = user.authentication.idToken
-                let imageURL = user.profile.imageURL(withDimension: 48)
+                let email = user.profile.email ?? ""
                 DispatchQueue.global(qos: .userInteractive).async {
-                    APIManager.sharedInstance.login(with: idToken ?? "", and: imageURL?.absoluteString ?? "", completion: { (success, msgError) in
+                    APIManager.sharedInstance.login(with: email, completion: { (success, msgError) in
                         if success {
                             print("Login successfully")
                             UserDefaults.standard.set(true, forKey: GlobalConstant.LOGGED_IN)
@@ -81,8 +80,9 @@ extension LoginViewController: GIDSignInDelegate {
                             }
                         } else {
                             DispatchQueue.main.async {
+                                GIDSignIn.sharedInstance().disconnect()
                                 ProgressHUD.dismiss()
-                                AlertUtils.showSimpleAlertView(with: "Error", message: msgError!)
+                                AlertUtils.showSimpleAlertView(with: "Error", message: msgError!, self)
                             }
                             print(msgError!)
                         }

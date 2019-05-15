@@ -9,5 +9,5 @@
 import Foundation
 
 struct ConstantAPI {
-    static let LOGIN_API = "check-api/v1/login-with-google"
+    static let LOGIN_API = "/auth/login-with-google"
 }
