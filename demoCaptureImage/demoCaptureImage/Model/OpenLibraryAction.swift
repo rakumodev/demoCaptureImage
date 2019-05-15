@@ -9,7 +9,7 @@
 import UIKit
 
 class OpenLibraryAction: ActionModel {
-    
+
     override init() {
         super.init()
         self.title = "Open Library"

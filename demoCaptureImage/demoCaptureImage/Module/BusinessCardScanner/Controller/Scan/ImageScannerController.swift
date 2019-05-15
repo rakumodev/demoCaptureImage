@@ -13,7 +13,7 @@ import AVFoundation
 
 /// A set of methods that your delegate object must implement to interact with the image scanner interface.
 protocol ImageScannerControllerDelegate: NSObjectProtocol {
-    
+
     /// Tells the delegate that the user scanned a document.
     ///
     /// - Parameters:
@@ -21,14 +21,14 @@ protocol ImageScannerControllerDelegate: NSObjectProtocol {
     ///   - results: The results of the user scanning with the camera.
     /// - Discussion: Your delegate's implementation of this method should dismiss the image scanner controller.
     func imageScannerController(_ scanner: ImageScannerController, didFinishScanningWithResults results: ImageScannerResults)
-    
+
     /// Tells the delegate that the user cancelled the scan operation.
     ///
     /// - Parameters:
     ///   - scanner: The scanner controller object managing the scanning interface.
     /// - Discussion: Your delegate's implementation of this method should dismiss the image scanner controller.
     func imageScannerControllerDidCancel(_ scanner: ImageScannerController)
-    
+
     /// Tells the delegate that an error occured during the user's scanning experience.
     ///
     /// - Parameters:
@@ -43,12 +43,12 @@ protocol ImageScannerControllerDelegate: NSObjectProtocol {
 /// 2. Edit the detected rectangle.
 /// 3. Review the cropped down version of the rectangle.
 class ImageScannerController: UINavigationController {
-    
+
     /// The object that acts as the delegate of the `ImageScannerController`.
     weak var imageScannerDelegate: ImageScannerControllerDelegate?
-    
+
     // MARK: - Life Cycle
-    
+
     /// A black UIView, used to quickly display a black screen when the shutter button is presseed.
     let blackFlashView: UIView = {
         let view = UIView()
@@ -57,22 +57,22 @@ class ImageScannerController: UINavigationController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     required init(image: UIImage? = nil, delegate: ImageScannerControllerDelegate? = nil) {
         super.init(rootViewController: ScannerViewController())
-        
+
         self.imageScannerDelegate = delegate
-        
+
         navigationBar.tintColor = .black
         navigationBar.isTranslucent = false
         self.view.addSubview(blackFlashView)
         setupConstraints()
-        
+
         // If an image was passed in by the host app (e.g. picked from the photo library), use it instead of the document scanner.
         if let image = image {
-            
+
             var detectedQuad: Quadrilateral?
-            
+
             // Whether or not we detect a quad, present the edit view controller after attempting to detect a quad.
             // *** Vision *requires* a completion block to detect rectangles, but it's instant.
             // *** When using Vision, we'll present the normal edit view controller first, then present the updated edit view controller later.
@@ -80,15 +80,15 @@ class ImageScannerController: UINavigationController {
                 let editViewController = EditScanViewController(image: image, quad: detectedQuad, rotateImage: false)
                 setViewControllers([editViewController], animated: false)
             }
-            
+
             guard let ciImage = CIImage(image: image) else { return }
-            
+
             if #available(iOS 11.0, *) {
                 // Use the VisionRectangleDetector on iOS 11 to attempt to find a rectangle from the initial image.
                 VisionRectangleDetector.rectangle(forImage: ciImage) { (quad) in
                     detectedQuad = quad
                     detectedQuad?.reorganize()
-                    
+
                     let editViewController = EditScanViewController(image: image, quad: detectedQuad, rotateImage: false)
                     self.setViewControllers([editViewController], animated: true)
                 }
@@ -99,15 +99,15 @@ class ImageScannerController: UINavigationController {
             }
         }
     }
-    
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setupConstraints() {
         let blackFlashViewConstraints = [
             blackFlashView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -115,14 +115,14 @@ class ImageScannerController: UINavigationController {
             view.bottomAnchor.constraint(equalTo: blackFlashView.bottomAnchor),
             view.trailingAnchor.constraint(equalTo: blackFlashView.trailingAnchor)
         ]
-        
+
         NSLayoutConstraint.activate(blackFlashViewConstraints)
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-    
+
     func flashToBlack() {
         view.bringSubviewToFront(blackFlashView)
         blackFlashView.isHidden = false
@@ -131,25 +131,25 @@ class ImageScannerController: UINavigationController {
             self.blackFlashView.isHidden = true
         }
     }
-    
+
 }
 
 /// Data structure containing information about a scan.
 struct ImageScannerResults {
-    
+
     /// The original image taken by the user, prior to the cropping applied by WeScan.
     var originalImage: UIImage
-    
+
     /// The deskewed and cropped orignal image using the detected rectangle, without any filters.
     var scannedImage: UIImage
-    
+
     /// The enhanced image, passed through an Adaptive Thresholding function. This image will always be grayscale and may not always be available.
     var enhancedImage: UIImage?
-    
+
     /// Whether the user wants to use the enhanced image or not. The `enhancedImage`, for use with OCR or similar uses, may still be available even if it has not been selected by the user.
     var doesUserPreferEnhancedImage: Bool
-    
+
     /// The detected rectangle which was used to generate the `scannedImage`.
     var detectedRectangle: Quadrilateral
-    
+
 }

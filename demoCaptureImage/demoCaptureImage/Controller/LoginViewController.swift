@@ -14,7 +14,8 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var bottomLb: UILabel!
     @IBOutlet weak var loginBtn: UIButton!
-    
+    let testString = "abcd123"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //Configure UI for different environment
@@ -24,11 +25,11 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance().delegate = self
         //Initialize sign-in UI
         GIDSignIn.sharedInstance().uiDelegate = self
-        AppDelegate.sharedInstance().loginScreen = self
+        AppDelegate.sharedInstance()!.loginScreen = self
     }
-    
-    func configUI(){
-        
+
+    func configUI() {
+
         //Configure UI for each environment
         let bgColor = Environment().configuration(PlistKey.BACKGROUND_COLOR)
         let lbColor = Environment().configuration(PlistKey.LABEL_COLOR)
@@ -38,18 +39,18 @@ class LoginViewController: UIViewController {
             self.bottomLb.textColor = UIColor.init(hexString: lbColor)
             self.loginBtn.setTitleColor(UIColor.init(hexString: lbColor), for: .normal)
         }
-        
+
     }
-    
+
     @IBAction func userClickLoginBtn(_ sender: UIButton) {
         print("Login button clicked")
         GIDSignIn.sharedInstance().signIn()
     }
-    
+
 }
 
 extension LoginViewController: GIDSignInDelegate {
-    
+
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
             DispatchQueue.main.async {
                 ProgressHUD.show()
@@ -61,8 +62,7 @@ extension LoginViewController: GIDSignInDelegate {
                     AlertUtils.showSimpleAlertView(with: "Error", message: error.localizedDescription)
                 }
                 print("\(error.localizedDescription)")
-            }
-            else {
+            } else {
                 //Authenticate with our server after signed in user.
                 let idToken = user.authentication.idToken
                 let imageURL = user.profile.imageURL(withDimension: 48)
@@ -77,10 +77,9 @@ extension LoginViewController: GIDSignInDelegate {
                                 let mainStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
                                 let homeViewController = mainStoryBoard.instantiateViewController(withIdentifier: GlobalConstant.HOME_SCREEN_IDENTIFER)
                                 let homeScreenNav = UINavigationController.init(rootViewController: homeViewController)
-                                AppDelegate.sharedInstance().window?.rootViewController = homeScreenNav
+                                AppDelegate.sharedInstance()!.window?.rootViewController = homeScreenNav
                             }
-                        }
-                        else {
+                        } else {
                             DispatchQueue.main.async {
                                 ProgressHUD.dismiss()
                                 AlertUtils.showSimpleAlertView(with: "Error", message: msgError!)
@@ -91,22 +90,22 @@ extension LoginViewController: GIDSignInDelegate {
                 }
             }
     }
-    
+
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         //Perform operations when the user disconnects from app here.
-        
+
     }
-    
+
 }
 
 extension LoginViewController: GIDSignInUIDelegate {
-    
+
     // Stop the UIActivityIndicatorView animation that was started when the user
     // pressed the Sign In button
     private func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
-        
+
     }
-    
+
     // Present a view that prompts the user to sign in with Google
     func sign(_ signIn: GIDSignIn!,
               present viewController: UIViewController!) {
@@ -114,7 +113,7 @@ extension LoginViewController: GIDSignInUIDelegate {
             self.present(viewController, animated: true, completion: nil)
         }
     }
-    
+
     // Dismiss the "Sign in with Google" view
     func sign(_ signIn: GIDSignIn!,
               dismiss viewController: UIViewController!) {
@@ -122,5 +121,5 @@ extension LoginViewController: GIDSignInUIDelegate {
             self.dismiss(animated: true, completion: nil)
         }
     }
-    
+
 }

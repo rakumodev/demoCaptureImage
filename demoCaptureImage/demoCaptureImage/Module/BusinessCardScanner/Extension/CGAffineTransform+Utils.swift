@@ -9,7 +9,7 @@
 import UIKit
 
 extension CGAffineTransform {
-    
+
     /// Convenience function to easily get a scale `CGAffineTransform` instance.
     ///
     /// - Parameters:
@@ -20,7 +20,7 @@ extension CGAffineTransform {
         let scale = max(toSize.width / fromSize.width, toSize.height / fromSize.height)
         return CGAffineTransform(scaleX: scale, y: scale)
     }
-    
+
     /// Convenience function to easily get a translate `CGAffineTransform` instance.
     ///
     /// - Parameters:
@@ -31,5 +31,5 @@ extension CGAffineTransform {
         let translate = CGPoint(x: toRect.midX - fromRect.midX, y: toRect.midY - fromRect.midY)
         return CGAffineTransform(translationX: translate.x, y: translate.y)
     }
-    
+
 }

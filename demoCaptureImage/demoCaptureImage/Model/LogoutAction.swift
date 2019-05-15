@@ -16,5 +16,5 @@ class LogoutAction: ActionModel {
         self.icon = UIImage.init(named: "logout_icon")
         self.action = .LOGOUT
     }
-    
+
 }

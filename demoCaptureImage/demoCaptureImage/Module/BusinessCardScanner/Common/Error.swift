@@ -9,7 +9,7 @@
 import Foundation
 
 /// Errors related to the `ImageScannerController`
-public enum ImageScannerControllerError: Error {
+enum ImageScannerControllerError: Error {
     /// The user didn't grant permission to use the camera.
     case authorization
     /// An error occured when setting up the user's device.
@@ -21,8 +21,8 @@ public enum ImageScannerControllerError: Error {
 }
 
 extension ImageScannerControllerError: LocalizedError {
-    
-    public var errorDescription: String? {
+
+    var errorDescription: String? {
         switch self {
         case .authorization:
             return "Failed to get the user's authorization for camera."
@@ -34,5 +34,5 @@ extension ImageScannerControllerError: LocalizedError {
             return "Internal Error - Could not create CIImage"
         }
     }
-    
+
 }

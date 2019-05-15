@@ -12,7 +12,7 @@ import Vision
 /// Class used to detect rectangles from an image.
 @available(iOS 11.0, *)
 struct VisionRectangleDetector {
-    
+
     static func completeImageRequest(for request: VNImageRequestHandler, width: CGFloat, height: CGFloat, completion: @escaping ((Quadrilateral?) -> Void)) {
         // Create the rectangle request, and, if found, return the biggest rectangle (else return nothing).
         let rectangleDetectionRequest: VNDetectRectanglesRequest = {
@@ -21,27 +21,27 @@ struct VisionRectangleDetector {
                     completion(nil)
                     return
                 }
-                
+
                 let quads: [Quadrilateral] = results.map(Quadrilateral.init)
-                
+
                 guard let biggest = quads.biggest() else { // This can't fail because the earlier guard protected against an empty array, but we use guard because of SwiftLint
                     completion(nil)
                     return
                 }
-                
+
                 let transform = CGAffineTransform.identity
                     .scaledBy(x: width, y: height)
-                
+
                 completion(biggest.applying(transform))
             })
-            
+
             rectDetectRequest.minimumConfidence = 0.8
             rectDetectRequest.maximumObservations = 15
             rectDetectRequest.minimumAspectRatio = 0.3
-            
+
             return rectDetectRequest
         }()
-        
+
         // Send the requests to the request handler.
         do {
             try request.perform([rectangleDetectionRequest])
@@ -49,9 +49,9 @@ struct VisionRectangleDetector {
             completion(nil)
             return
         }
-        
+
     }
-    
+
     /// Detects rectangles from the given CVPixelBuffer/CVImageBuffer on iOS 11 and above.
     ///
     /// - Parameters:
@@ -65,7 +65,7 @@ struct VisionRectangleDetector {
             height: CGFloat(CVPixelBufferGetHeight(pixelBuffer)),
             completion: completion)
     }
-    
+
     /// Detects rectangles from the given image on iOS 11 and above.
     ///
     /// - Parameters:
@@ -77,5 +77,5 @@ struct VisionRectangleDetector {
             for: imageRequestHandler, width: image.extent.width,
             height: image.extent.height, completion: completion)
     }
-    
+
 }

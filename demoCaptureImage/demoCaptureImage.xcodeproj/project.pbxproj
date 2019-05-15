@@ -489,6 +489,7 @@
 				DA80F4022282D33F004285F9 /* Resources */,
 				B3A9D23E9A53216C2EB4D652 /* [CP] Embed Pods Frameworks */,
 				5B28E07BC61087E5553675D5 /* [CP] Copy Pods Resources */,
+				DA28552B228A962900585A3F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -704,6 +705,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DA28552B228A962900585A3F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		F38538D00FF0B7963248FFEE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

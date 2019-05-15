@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ActionType{
+enum ActionType {
     case CAPTURE_IMAGE
     case OPEN_LIBRARY
     case LOGOUT
@@ -18,15 +18,15 @@ class ActionModel: NSObject {
     var title: String?
     var icon: UIImage?
     var action: ActionType?
-    
-    override init(){
-        
+
+    override init() {
+
     }
-    
-    init(title: String,iconName: String,action: ActionType) {
+
+    init(title: String, iconName: String, action: ActionType) {
         self.title = title
         self.icon = UIImage.init(named: iconName)
         self.action = action
     }
-    
+
 }

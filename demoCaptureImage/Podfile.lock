@@ -14,13 +14,11 @@ PODS:
   - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
   - GTMSessionFetcher/Core (1.2.1)
   - ProgressHUD (2.60)
-  - SwiftLint (0.32.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.5)
   - GoogleSignIn
   - ProgressHUD
-  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -29,7 +27,6 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMSessionFetcher
     - ProgressHUD
-    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: cd08a4402bd12cacd0c66f23fb12fec8d6b965e4
@@ -37,8 +34,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
-  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
 
-PODFILE CHECKSUM: b985304d913f67bbeae9b700f72ee4d45d5334da
+PODFILE CHECKSUM: 42f5d8fe060f86839b5cb051eb25af32e6297e9a
 
 COCOAPODS: 1.6.1

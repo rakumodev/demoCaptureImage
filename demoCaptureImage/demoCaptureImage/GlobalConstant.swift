@@ -14,4 +14,3 @@ struct GlobalConstant {
     static let LOGIN_SCREEN_IDENTIFER = "LoginViewController"
     static let HOME_SCREEN_IDENTIFER = "HomeViewController"
 }
-
