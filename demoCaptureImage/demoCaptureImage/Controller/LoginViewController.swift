@@ -14,7 +14,6 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var bottomLb: UILabel!
     @IBOutlet weak var loginBtn: UIButton!
-    let testString = "abcd123"
 
     override func viewDidLoad() {
         super.viewDidLoad()
