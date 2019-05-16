@@ -1,11 +1,3 @@
-//
-//  EditScanCornerView.swift
-//  demoCaptureImage
-//
-//  Created by phat nguyen on 5/13/19.
-//  Copyright © 2019 phatnt. All rights reserved.
-//
-
 import UIKit
 
 /// A UIView used by corners of a quadrilateral that is aware of its position.

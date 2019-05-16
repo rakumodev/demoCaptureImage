@@ -1,11 +1,3 @@
-//
-//  ReviewViewController.swift
-//  demoCaptureImage
-//
-//  Created by phat nguyen on 5/13/19.
-//  Copyright © 2019 phatnt. All rights reserved.
-//
-
 import UIKit
 
 /// The `ReviewViewController` offers an interface to review the image after it has been cropped and deskwed according to the passed in quadrilateral.

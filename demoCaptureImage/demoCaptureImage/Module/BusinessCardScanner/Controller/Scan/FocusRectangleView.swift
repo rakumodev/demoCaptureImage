@@ -1,11 +1,3 @@
-//
-//  FocusRectangleView.swift
-//  demoCaptureImage
-//
-//  Created by phat nguyen on 5/13/19.
-//  Copyright © 2019 phatnt. All rights reserved.
-//
-
 import UIKit
 
 /// A yellow rectangle used to display the last 'tap to focus' point

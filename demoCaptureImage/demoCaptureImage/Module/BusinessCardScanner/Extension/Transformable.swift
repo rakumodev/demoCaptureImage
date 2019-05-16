@@ -1,11 +1,3 @@
-//
-//  Transformable.swift
-//  demoCaptureImage
-//
-//  Created by phat nguyen on 5/13/19.
-//  Copyright © 2019 phatnt. All rights reserved.
-//
-
 import UIKit
 
 /// Objects that conform to the Transformable protocol are capable of being transformed with a `CGAffineTransform`.
