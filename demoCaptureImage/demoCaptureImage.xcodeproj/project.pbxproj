@@ -10,6 +10,8 @@
 		37D8B8E121F9756D647469FA /* Pods_demoCaptureImageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578D749706C77FF6756774F5 /* Pods_demoCaptureImageUITests.framework */; };
 		7C7EDCBE90E8DFE0D164FD51 /* Pods_demoCaptureImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA726276AFE7EDA1C2D14E3 /* Pods_demoCaptureImage.framework */; };
 		D86ECD456336638535805DBD /* Pods_demoCaptureImageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E539B9E99C971E6AF719FCE /* Pods_demoCaptureImageTests.framework */; };
+		DA0CA0B7229234E900919BE8 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0CA0B5229234E800919BE8 /* GlobalConstant.swift */; };
+		DA0CA0B8229234E900919BE8 /* ConstantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0CA0B6229234E800919BE8 /* ConstantAPI.swift */; };
 		DA16D6572285252100CC30D7 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA16D6562285252100CC30D7 /* Environment.swift */; };
 		DA16D659228527CF00CC30D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA16D658228527CF00CC30D7 /* LoginViewController.swift */; };
 		DA1CBFCB228906800046B4D0 /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CBFCA228906800046B4D0 /* AlertUtils.swift */; };
@@ -48,8 +50,6 @@
 		DA1CC01C2289430C0046B4D0 /* AVCaptureDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC01B2289430C0046B4D0 /* AVCaptureDeviceExtension.swift */; };
 		DA1CC01F2289435B0046B4D0 /* MockCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC01E2289435B0046B4D0 /* MockCaptureDevice.swift */; };
 		DA1CC021228943810046B4D0 /* ImageScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC020228943810046B4D0 /* ImageScannerController.swift */; };
-		DA28551D228A4AF700585A3F /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28551C228A4AF600585A3F /* GlobalConstant.swift */; };
-		DA285527228A4CD600585A3F /* ConstantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA285525228A4CD600585A3F /* ConstantAPI.swift */; };
 		DA285529228A4D0D00585A3F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA285528228A4D0D00585A3F /* APIManager.swift */; };
 		DA80F40F2282D341004285F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA80F40E2282D341004285F9 /* Assets.xcassets */; };
 		DA80F41D2282D341004285F9 /* demoCaptureImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80F41C2282D341004285F9 /* demoCaptureImageTests.swift */; };
@@ -100,6 +100,9 @@
 		BADB8C56A7AC172A8E8E0396 /* Pods-demoCaptureImage.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.release (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.release (prod).xcconfig"; sourceTree = "<group>"; };
 		C4A7775950898C36813972B5 /* Pods-demoCaptureImage.release (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.release (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.release (stagging).xcconfig"; sourceTree = "<group>"; };
 		D83F46A09E1B309B62398D5F /* Pods-demoCaptureImage.debug (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.debug (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.debug (prod).xcconfig"; sourceTree = "<group>"; };
+		DA0CA0B5229234E800919BE8 /* GlobalConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
+		DA0CA0B6229234E800919BE8 /* ConstantAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantAPI.swift; sourceTree = "<group>"; };
+		DA0CA0BA2292356600919BE8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA16D6562285252100CC30D7 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		DA16D658228527CF00CC30D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DA1CBFCA228906800046B4D0 /* AlertUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtils.swift; sourceTree = "<group>"; };
@@ -138,8 +141,6 @@
 		DA1CC01B2289430C0046B4D0 /* AVCaptureDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceExtension.swift; sourceTree = "<group>"; };
 		DA1CC01E2289435B0046B4D0 /* MockCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCaptureDevice.swift; sourceTree = "<group>"; };
 		DA1CC020228943810046B4D0 /* ImageScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScannerController.swift; sourceTree = "<group>"; };
-		DA28551C228A4AF600585A3F /* GlobalConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
-		DA285525228A4CD600585A3F /* ConstantAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantAPI.swift; sourceTree = "<group>"; };
 		DA285528228A4D0D00585A3F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		DA80F4042282D33F004285F9 /* demoCaptureImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoCaptureImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA80F40E2282D341004285F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,7 +150,6 @@
 		DA80F4232282D341004285F9 /* demoCaptureImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoCaptureImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA80F4272282D341004285F9 /* demoCaptureImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoCaptureImageUITests.swift; sourceTree = "<group>"; };
 		DA80F4292282D341004285F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA931AE92284038F0047DC90 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA931AEE228405BD0047DC90 /* Prod.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
 		DA931AEF228405BD0047DC90 /* Dev.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
 		DA931AF0228405BD0047DC90 /* Stagging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Stagging.xcconfig; sourceTree = "<group>"; };
@@ -224,6 +224,23 @@
 				578D749706C77FF6756774F5 /* Pods_demoCaptureImageUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA0CA0B4229234E800919BE8 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				DA0CA0B5229234E800919BE8 /* GlobalConstant.swift */,
+				DA0CA0B6229234E800919BE8 /* ConstantAPI.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		DA0CA0B92292356600919BE8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA0CA0BA2292356600919BE8 /* Info.plist */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 		DA16D655228524FE00CC30D7 /* Environment */ = {
@@ -366,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				DA285528228A4D0D00585A3F /* APIManager.swift */,
-				DA285525228A4CD600585A3F /* ConstantAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -397,8 +413,9 @@
 		DA80F4062282D33F004285F9 /* demoCaptureImage */ = {
 			isa = PBXGroup;
 			children = (
+				DA0CA0B92292356600919BE8 /* Support Files */,
+				DA0CA0B4229234E800919BE8 /* Constant */,
 				DA285523228A4CD600585A3F /* API */,
-				DA28551C228A4AF600585A3F /* GlobalConstant.swift */,
 				DA1CBFDC2289298B0046B4D0 /* Module */,
 				DA1CBFD0228922820046B4D0 /* Model */,
 				DA1CBFC9228906720046B4D0 /* Util */,
@@ -407,7 +424,6 @@
 				DA931AF5228405FD0047DC90 /* App */,
 				DA931AF4228405FD0047DC90 /* Controller */,
 				DA931AF6228405FD0047DC90 /* Storyboard */,
-				DA931AE92284038F0047DC90 /* Info.plist */,
 				DA80F40E2282D341004285F9 /* Assets.xcassets */,
 			);
 			path = demoCaptureImage;
@@ -759,6 +775,7 @@
 				DA285529228A4D0D00585A3F /* APIManager.swift in Sources */,
 				DA1CBFD8228925770046B4D0 /* LogoutAction.swift in Sources */,
 				DA1CC014228942320046B4D0 /* CIImage+Utils.swift in Sources */,
+				DA0CA0B7229234E900919BE8 /* GlobalConstant.swift in Sources */,
 				DA1CBFF222892B9B0046B4D0 /* ScannerViewController.swift in Sources */,
 				DA16D659228527CF00CC30D7 /* LoginViewController.swift in Sources */,
 				DA1CBFEA22892AC80046B4D0 /* Quadrilateral.swift in Sources */,
@@ -783,7 +800,6 @@
 				DA1CC0082289418C0046B4D0 /* CaptureSession+Orientation.swift in Sources */,
 				DA1CBFE622892A8C0046B4D0 /* CIRectangleDetector.swift in Sources */,
 				DA1CBFD22289229B0046B4D0 /* ActionModel.swift in Sources */,
-				DA28551D228A4AF700585A3F /* GlobalConstant.swift in Sources */,
 				DA1CBFFC2289403F0046B4D0 /* EditScanViewController.swift in Sources */,
 				DA1CBFCD228907A20046B4D0 /* UIWindowExtension.swift in Sources */,
 				DA1CBFF022892AF10046B4D0 /* EditScanCornerView.swift in Sources */,
@@ -792,7 +808,7 @@
 				DA1CC01C2289430C0046B4D0 /* AVCaptureDeviceExtension.swift in Sources */,
 				DA1CBFFE2289404E0046B4D0 /* ZoomGestureController.swift in Sources */,
 				DA1CC010228941F90046B4D0 /* CGAffineTransform+Utils.swift in Sources */,
-				DA285527228A4CD600585A3F /* ConstantAPI.swift in Sources */,
+				DA0CA0B8229234E900919BE8 /* ConstantAPI.swift in Sources */,
 				DA1CC00A228941B10046B4D0 /* Array+Utils.swift in Sources */,
 				DA1CBFD42289242F0046B4D0 /* CaptureImageAction.swift in Sources */,
 				DA1CC002228941240046B4D0 /* CaptureSession.swift in Sources */,
@@ -883,7 +899,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -939,7 +955,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -956,7 +972,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SJFV9RP76W;
-				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				INFOPLIST_FILE = "demoCaptureImage/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -976,7 +992,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SJFV9RP76W;
-				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				INFOPLIST_FILE = "demoCaptureImage/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1123,7 +1139,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1140,7 +1156,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SJFV9RP76W;
-				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				INFOPLIST_FILE = "demoCaptureImage/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1240,7 +1256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1257,7 +1273,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SJFV9RP76W;
-				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				INFOPLIST_FILE = "demoCaptureImage/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1363,7 +1379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1380,7 +1396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SJFV9RP76W;
-				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				INFOPLIST_FILE = "demoCaptureImage/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1480,7 +1496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1497,7 +1513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SJFV9RP76W;
-				INFOPLIST_FILE = demoCaptureImage/Info.plist;
+				INFOPLIST_FILE = "demoCaptureImage/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

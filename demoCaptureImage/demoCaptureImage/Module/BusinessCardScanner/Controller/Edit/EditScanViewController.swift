@@ -159,6 +159,7 @@ class EditScanViewController: UIViewController {
         let reviewViewController = ReviewViewController(results: results)
         navigationController?.pushViewController(reviewViewController, animated: true)
     }
+    
     @objc func dismissViewController() {
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)

@@ -9,10 +9,11 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
+//CocoaPod configurations
+#include "Pods/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.debug (Stagging).xcconfig"
+
 //App configurations
 APP_NAME = demo Stagging
 LABEL_COLOR = #000000
 BACKGROUND_COLOR = #FFFF00
 SERVER_URL = 192.168.1.89:8089
-//CocoaPod configurations
-#include "Pods/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.debug (Stagging).xcconfig"
