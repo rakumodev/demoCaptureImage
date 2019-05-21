@@ -25,13 +25,21 @@ class HomeViewController: UITableViewController {
     }
 
     func userClickLogout() {
-        GIDSignIn.sharedInstance().signOut()
-        UserDefaults.standard.set(false, forKey: GlobalConstant.LOGGED_IN)
-        DispatchQueue.main.async {
-            let loginViewController = AppDelegate.sharedInstance()!.mainStoryBoard.instantiateViewController(withIdentifier: GlobalConstant.LOGIN_SCREEN_IDENTIFER)
-            let loginScreenNav = UINavigationController.init(rootViewController: loginViewController)
-            AppDelegate.sharedInstance()!.window?.rootViewController = loginScreenNav
-            print("Logout successfully")
+        AlertUtils.showYesNoAlertView(with: "Warning", message: "Do you want to logout ?", self) { (isOk) in
+            if isOk {
+                //User tapped OK button
+                GIDSignIn.sharedInstance().signOut()
+                UserDefaults.standard.set(false, forKey: GlobalConstant.LOGGED_IN)
+                DispatchQueue.main.async {
+                    let loginViewController = AppDelegate.sharedInstance()!.mainStoryBoard.instantiateViewController(withIdentifier: GlobalConstant.LOGIN_SCREEN_IDENTIFER)
+                    let loginScreenNav = UINavigationController.init(rootViewController: loginViewController)
+                    AppDelegate.sharedInstance()!.window?.rootViewController = loginScreenNav
+                    print("Logout successfully")
+                }
+            } else {
+                //User tapped Cancel button
+                return
+            }
         }
     }
 

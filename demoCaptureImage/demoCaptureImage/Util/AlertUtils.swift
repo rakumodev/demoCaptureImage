@@ -22,5 +22,23 @@ struct AlertUtils {
             }
         }
     }
+    
+    static func showYesNoAlertView(with title: String, message: String, _ parentVC: UIViewController? = nil, completion: @escaping(_ isOk: Bool) -> Void) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { (_) in
+                completion(true)
+            }))
+            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { (_) in
+                alert.dismiss(animated: true, completion: nil)
+                completion(false)
+            }))
+            if parentVC != nil {
+                parentVC?.present(alert, animated: true, completion: nil)
+            } else {
+                AppDelegate.sharedInstance()!.window?.topViewController()?.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
 
 }
