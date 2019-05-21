@@ -7,16 +7,37 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var loginScreen: LoginViewController!
+    var homeScreen: HomeViewController!
+    let mainStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        //Perform check if user has already logged in yet
+        if UserDefaults.standard.bool(forKey: GlobalConstant.LOGGED_IN) {
+            //If true then app directly navigates to home screen
+            let homeViewController = mainStoryBoard.instantiateViewController(withIdentifier: GlobalConstant.HOME_SCREEN_IDENTIFER)
+            let homeScreenNav = UINavigationController.init(rootViewController: homeViewController)
+            self.window?.rootViewController = homeScreenNav
+        } else {
+            //If false then app navigates to login screen
+            let logInViewController = mainStoryBoard.instantiateViewController(withIdentifier: GlobalConstant.LOGIN_SCREEN_IDENTIFER)
+            let logInNav = UINavigationController.init(rootViewController: logInViewController)
+            self.window?.rootViewController = logInNav
+        }
+
         return true
+    }
+
+    //Open URL handle
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url as URL?, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -41,6 +62,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
 
+extension AppDelegate {
+
+    class func sharedInstance() -> AppDelegate? {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
+        return appDelegate
+    }
+
+}
