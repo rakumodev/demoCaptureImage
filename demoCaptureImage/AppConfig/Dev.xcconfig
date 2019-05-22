@@ -11,6 +11,7 @@
 
 //CocoaPod configurations
 #include "Pods/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.debug (dev).xcconfig"
+#include "Pods/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.release (dev).xcconfig"
 
 //App configurations
 APP_NAME = demo Dev
