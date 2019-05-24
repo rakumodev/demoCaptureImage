@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37D8B8E121F9756D647469FA /* Pods_demoCaptureImageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578D749706C77FF6756774F5 /* Pods_demoCaptureImageUITests.framework */; };
 		7C7EDCBE90E8DFE0D164FD51 /* Pods_demoCaptureImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA726276AFE7EDA1C2D14E3 /* Pods_demoCaptureImage.framework */; };
-		D86ECD456336638535805DBD /* Pods_demoCaptureImageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E539B9E99C971E6AF719FCE /* Pods_demoCaptureImageTests.framework */; };
 		DA0CA0B7229234E900919BE8 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0CA0B5229234E800919BE8 /* GlobalConstant.swift */; };
 		DA0CA0B8229234E900919BE8 /* ConstantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0CA0B6229234E800919BE8 /* ConstantAPI.swift */; };
 		DA16D6572285252100CC30D7 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA16D6562285252100CC30D7 /* Environment.swift */; };
@@ -52,8 +50,6 @@
 		DA1CC021228943810046B4D0 /* ImageScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC020228943810046B4D0 /* ImageScannerController.swift */; };
 		DA285529228A4D0D00585A3F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA285528228A4D0D00585A3F /* APIManager.swift */; };
 		DA80F40F2282D341004285F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA80F40E2282D341004285F9 /* Assets.xcassets */; };
-		DA80F41D2282D341004285F9 /* demoCaptureImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80F41C2282D341004285F9 /* demoCaptureImageTests.swift */; };
-		DA80F4282282D341004285F9 /* demoCaptureImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80F4272282D341004285F9 /* demoCaptureImageUITests.swift */; };
 		DA931AF1228405BD0047DC90 /* Prod.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DA931AEE228405BD0047DC90 /* Prod.xcconfig */; };
 		DA931AF2228405BD0047DC90 /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DA931AEF228405BD0047DC90 /* Dev.xcconfig */; };
 		DA931AF3228405BD0047DC90 /* Stagging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DA931AF0228405BD0047DC90 /* Stagging.xcconfig */; };
@@ -64,42 +60,9 @@
 		DABEFFC02285737A006127BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABEFFBF2285737A006127BF /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		DA80F4192282D341004285F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA80F3FC2282D33F004285F9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DA80F4032282D33F004285F9;
-			remoteInfo = demoCaptureImage;
-		};
-		DA80F4242282D341004285F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA80F3FC2282D33F004285F9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DA80F4032282D33F004285F9;
-			remoteInfo = demoCaptureImage;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		12D5AC381077DFA4A543DAB7 /* Pods-demoCaptureImageTests.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.release (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.release (dev).xcconfig"; sourceTree = "<group>"; };
-		2732FA86ECE1EF6A024EF68D /* Pods-demoCaptureImageTests.debug (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.debug (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.debug (prod).xcconfig"; sourceTree = "<group>"; };
-		3BE44FE84D4B3F03EEA0DDEA /* Pods-demoCaptureImageTests.release (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.release (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.release (stagging).xcconfig"; sourceTree = "<group>"; };
-		3C82977B1BB1018325D37196 /* Pods-demoCaptureImageTests.debug (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.debug (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.debug (stagging).xcconfig"; sourceTree = "<group>"; };
-		3D4AC34C628317A22F687A6F /* Pods-demoCaptureImageUITests.release (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.release (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.release (stagging).xcconfig"; sourceTree = "<group>"; };
-		4145088301833C41CF1D2087 /* Pods-demoCaptureImage.debug (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.debug (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.debug (stagging).xcconfig"; sourceTree = "<group>"; };
-		4644C1B0B6EFB5F577F1C8D0 /* Pods-demoCaptureImageUITests.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.release (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.release (prod).xcconfig"; sourceTree = "<group>"; };
-		53CACA20954414B977530D4C /* Pods-demoCaptureImageUITests.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.release (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.release (dev).xcconfig"; sourceTree = "<group>"; };
-		578D749706C77FF6756774F5 /* Pods_demoCaptureImageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoCaptureImageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DF0D3E2748E69E11B836CC2 /* Pods-demoCaptureImageUITests.debug (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.debug (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.debug (prod).xcconfig"; sourceTree = "<group>"; };
-		77BEA559724643675A745372 /* Pods-demoCaptureImageTests.debug (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.debug (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.debug (dev).xcconfig"; sourceTree = "<group>"; };
-		870F5D8B6A0E6A37A52B0E82 /* Pods-demoCaptureImage.debug (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.debug (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.debug (dev).xcconfig"; sourceTree = "<group>"; };
-		9B633DC8FF8289D51AF7B7F7 /* Pods-demoCaptureImageTests.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageTests.release (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageTests/Pods-demoCaptureImageTests.release (prod).xcconfig"; sourceTree = "<group>"; };
-		9E539B9E99C971E6AF719FCE /* Pods_demoCaptureImageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoCaptureImageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A22719102131C31A49EDD3AA /* Pods-demoCaptureImageUITests.debug (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.debug (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.debug (dev).xcconfig"; sourceTree = "<group>"; };
-		BADB8C56A7AC172A8E8E0396 /* Pods-demoCaptureImage.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.release (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.release (prod).xcconfig"; sourceTree = "<group>"; };
-		C4A7775950898C36813972B5 /* Pods-demoCaptureImage.release (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.release (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.release (stagging).xcconfig"; sourceTree = "<group>"; };
-		D83F46A09E1B309B62398D5F /* Pods-demoCaptureImage.debug (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.debug (prod).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.debug (prod).xcconfig"; sourceTree = "<group>"; };
+		216332BB7836B857300AC24C /* Pods-demoCaptureImage.stagging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.stagging.xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.stagging.xcconfig"; sourceTree = "<group>"; };
+		533C9D5B50ECA415E861C18A /* Pods-demoCaptureImage.prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.prod.xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.prod.xcconfig"; sourceTree = "<group>"; };
 		DA0CA0B5229234E800919BE8 /* GlobalConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		DA0CA0B6229234E800919BE8 /* ConstantAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantAPI.swift; sourceTree = "<group>"; };
 		DA0CA0BA2292356600919BE8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,10 +107,8 @@
 		DA285528228A4D0D00585A3F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		DA80F4042282D33F004285F9 /* demoCaptureImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoCaptureImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA80F40E2282D341004285F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DA80F4182282D341004285F9 /* demoCaptureImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoCaptureImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA80F41C2282D341004285F9 /* demoCaptureImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoCaptureImageTests.swift; sourceTree = "<group>"; };
 		DA80F41E2282D341004285F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA80F4232282D341004285F9 /* demoCaptureImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoCaptureImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA80F4272282D341004285F9 /* demoCaptureImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoCaptureImageUITests.swift; sourceTree = "<group>"; };
 		DA80F4292282D341004285F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA931AEE228405BD0047DC90 /* Prod.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
@@ -159,8 +120,7 @@
 		DABEFFBB228563D8006127BF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DABEFFBF2285737A006127BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DCA726276AFE7EDA1C2D14E3 /* Pods_demoCaptureImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoCaptureImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFB7D9D28750B6E8B95D0A49 /* Pods-demoCaptureImageUITests.debug (stagging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImageUITests.debug (stagging).xcconfig"; path = "Target Support Files/Pods-demoCaptureImageUITests/Pods-demoCaptureImageUITests.debug (stagging).xcconfig"; sourceTree = "<group>"; };
-		F5115140142912F7D623A7EC /* Pods-demoCaptureImage.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.release (dev).xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.release (dev).xcconfig"; sourceTree = "<group>"; };
+		ED3BFC900744D459F37B27CB /* Pods-demoCaptureImage.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.dev.xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.dev.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,46 +132,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA80F4152282D341004285F9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D86ECD456336638535805DBD /* Pods_demoCaptureImageTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA80F4202282D341004285F9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				37D8B8E121F9756D647469FA /* Pods_demoCaptureImageUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		76285B124D986EE1F3D04C9C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				870F5D8B6A0E6A37A52B0E82 /* Pods-demoCaptureImage.debug (dev).xcconfig */,
-				4145088301833C41CF1D2087 /* Pods-demoCaptureImage.debug (stagging).xcconfig */,
-				D83F46A09E1B309B62398D5F /* Pods-demoCaptureImage.debug (prod).xcconfig */,
-				F5115140142912F7D623A7EC /* Pods-demoCaptureImage.release (dev).xcconfig */,
-				C4A7775950898C36813972B5 /* Pods-demoCaptureImage.release (stagging).xcconfig */,
-				BADB8C56A7AC172A8E8E0396 /* Pods-demoCaptureImage.release (prod).xcconfig */,
-				77BEA559724643675A745372 /* Pods-demoCaptureImageTests.debug (dev).xcconfig */,
-				3C82977B1BB1018325D37196 /* Pods-demoCaptureImageTests.debug (stagging).xcconfig */,
-				2732FA86ECE1EF6A024EF68D /* Pods-demoCaptureImageTests.debug (prod).xcconfig */,
-				12D5AC381077DFA4A543DAB7 /* Pods-demoCaptureImageTests.release (dev).xcconfig */,
-				3BE44FE84D4B3F03EEA0DDEA /* Pods-demoCaptureImageTests.release (stagging).xcconfig */,
-				9B633DC8FF8289D51AF7B7F7 /* Pods-demoCaptureImageTests.release (prod).xcconfig */,
-				A22719102131C31A49EDD3AA /* Pods-demoCaptureImageUITests.debug (dev).xcconfig */,
-				DFB7D9D28750B6E8B95D0A49 /* Pods-demoCaptureImageUITests.debug (stagging).xcconfig */,
-				6DF0D3E2748E69E11B836CC2 /* Pods-demoCaptureImageUITests.debug (prod).xcconfig */,
-				53CACA20954414B977530D4C /* Pods-demoCaptureImageUITests.release (dev).xcconfig */,
-				3D4AC34C628317A22F687A6F /* Pods-demoCaptureImageUITests.release (stagging).xcconfig */,
-				4644C1B0B6EFB5F577F1C8D0 /* Pods-demoCaptureImageUITests.release (prod).xcconfig */,
+				ED3BFC900744D459F37B27CB /* Pods-demoCaptureImage.dev.xcconfig */,
+				216332BB7836B857300AC24C /* Pods-demoCaptureImage.stagging.xcconfig */,
+				533C9D5B50ECA415E861C18A /* Pods-demoCaptureImage.prod.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -220,8 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				DCA726276AFE7EDA1C2D14E3 /* Pods_demoCaptureImage.framework */,
-				9E539B9E99C971E6AF719FCE /* Pods_demoCaptureImageTests.framework */,
-				578D749706C77FF6756774F5 /* Pods_demoCaptureImageUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -404,8 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				DA80F4042282D33F004285F9 /* demoCaptureImage.app */,
-				DA80F4182282D341004285F9 /* demoCaptureImageTests.xctest */,
-				DA80F4232282D341004285F9 /* demoCaptureImageUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -516,44 +441,6 @@
 			productReference = DA80F4042282D33F004285F9 /* demoCaptureImage.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DA80F4172282D341004285F9 /* demoCaptureImageTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DA80F42F2282D341004285F9 /* Build configuration list for PBXNativeTarget "demoCaptureImageTests" */;
-			buildPhases = (
-				6E804D2A1B683BAB0D167DF4 /* [CP] Check Pods Manifest.lock */,
-				DA80F4142282D341004285F9 /* Sources */,
-				DA80F4152282D341004285F9 /* Frameworks */,
-				DA80F4162282D341004285F9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DA80F41A2282D341004285F9 /* PBXTargetDependency */,
-			);
-			name = demoCaptureImageTests;
-			productName = demoCaptureImageTests;
-			productReference = DA80F4182282D341004285F9 /* demoCaptureImageTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DA80F4222282D341004285F9 /* demoCaptureImageUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DA80F4322282D341004285F9 /* Build configuration list for PBXNativeTarget "demoCaptureImageUITests" */;
-			buildPhases = (
-				26CB5B494D9E6344DAA3A990 /* [CP] Check Pods Manifest.lock */,
-				DA80F41F2282D341004285F9 /* Sources */,
-				DA80F4202282D341004285F9 /* Frameworks */,
-				DA80F4212282D341004285F9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DA80F4252282D341004285F9 /* PBXTargetDependency */,
-			);
-			name = demoCaptureImageUITests;
-			productName = demoCaptureImageUITests;
-			productReference = DA80F4232282D341004285F9 /* demoCaptureImageUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -566,14 +453,6 @@
 				TargetAttributes = {
 					DA80F4032282D33F004285F9 = {
 						CreatedOnToolsVersion = 10.2.1;
-					};
-					DA80F4172282D341004285F9 = {
-						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = DA80F4032282D33F004285F9;
-					};
-					DA80F4222282D341004285F9 = {
-						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = DA80F4032282D33F004285F9;
 					};
 				};
 			};
@@ -591,8 +470,6 @@
 			projectRoot = "";
 			targets = (
 				DA80F4032282D33F004285F9 /* demoCaptureImage */,
-				DA80F4172282D341004285F9 /* demoCaptureImageTests */,
-				DA80F4222282D341004285F9 /* demoCaptureImageUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -611,45 +488,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA80F4162282D341004285F9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA80F4212282D341004285F9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26CB5B494D9E6344DAA3A990 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-demoCaptureImageUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5B28E07BC61087E5553675D5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -670,28 +511,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6E804D2A1B683BAB0D167DF4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-demoCaptureImageTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B3A9D23E9A53216C2EB4D652 /* [CP] Embed Pods Frameworks */ = {
@@ -815,39 +634,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA80F4142282D341004285F9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DA80F41D2282D341004285F9 /* demoCaptureImageTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA80F41F2282D341004285F9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DA80F4282282D341004285F9 /* demoCaptureImageUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		DA80F41A2282D341004285F9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DA80F4032282D33F004285F9 /* demoCaptureImage */;
-			targetProxy = DA80F4192282D341004285F9 /* PBXContainerItemProxy */;
-		};
-		DA80F4252282D341004285F9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DA80F4032282D33F004285F9 /* demoCaptureImage */;
-			targetProxy = DA80F4242282D341004285F9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		DA80F42A2282D341004285F9 /* Debug (Dev) */ = {
+		DA80F42A2282D341004285F9 /* Dev */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA931AEF228405BD0047DC90 /* Dev.xcconfig */;
 			buildSettings = {
@@ -907,65 +697,9 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = "Debug (Dev)";
+			name = Dev;
 		};
-		DA80F42B2282D341004285F9 /* Release (Dev) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA931AEF228405BD0047DC90 /* Dev.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = "Release (Dev)";
-		};
-		DA80F42D2282D341004285F9 /* Debug (Dev) */ = {
+		DA80F42D2282D341004285F9 /* Dev */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA931AEF228405BD0047DC90 /* Dev.xcconfig */;
 			buildSettings = {
@@ -983,234 +717,9 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = "Debug (Dev)";
+			name = Dev;
 		};
-		DA80F42E2282D341004285F9 /* Release (Dev) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA931AEF228405BD0047DC90 /* Dev.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJFV9RP76W;
-				INFOPLIST_FILE = "demoCaptureImage/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImage;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = "Release (Dev)";
-		};
-		DA80F4302282D341004285F9 /* Debug (Dev) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77BEA559724643675A745372 /* Pods-demoCaptureImageTests.debug (dev).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/demoCaptureImage.app/demoCaptureImage";
-			};
-			name = "Debug (Dev)";
-		};
-		DA80F4312282D341004285F9 /* Release (Dev) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12D5AC381077DFA4A543DAB7 /* Pods-demoCaptureImageTests.release (dev).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/demoCaptureImage.app/demoCaptureImage";
-			};
-			name = "Release (Dev)";
-		};
-		DA80F4332282D341004285F9 /* Debug (Dev) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A22719102131C31A49EDD3AA /* Pods-demoCaptureImageUITests.debug (dev).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = demoCaptureImage;
-			};
-			name = "Debug (Dev)";
-		};
-		DA80F4342282D341004285F9 /* Release (Dev) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53CACA20954414B977530D4C /* Pods-demoCaptureImageUITests.release (dev).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = demoCaptureImage;
-			};
-			name = "Release (Dev)";
-		};
-		DA80F4352282D39B004285F9 /* Debug (Stagging) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA931AF0228405BD0047DC90 /* Stagging.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = "Debug (Stagging)";
-		};
-		DA80F4362282D39B004285F9 /* Debug (Stagging) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA931AF0228405BD0047DC90 /* Stagging.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJFV9RP76W;
-				INFOPLIST_FILE = "demoCaptureImage/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImage;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = "Debug (Stagging)";
-		};
-		DA80F4372282D39B004285F9 /* Debug (Stagging) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C82977B1BB1018325D37196 /* Pods-demoCaptureImageTests.debug (stagging).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/demoCaptureImage.app/demoCaptureImage";
-			};
-			name = "Debug (Stagging)";
-		};
-		DA80F4382282D39B004285F9 /* Debug (Stagging) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFB7D9D28750B6E8B95D0A49 /* Pods-demoCaptureImageUITests.debug (stagging).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = demoCaptureImage;
-			};
-			name = "Debug (Stagging)";
-		};
-		DA80F4392282D3A8004285F9 /* Release (Stagging) */ = {
+		DA80F4392282D3A8004285F9 /* Stagging */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA931AF0228405BD0047DC90 /* Stagging.xcconfig */;
 			buildSettings = {
@@ -1264,9 +773,9 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Release (Stagging)";
+			name = Stagging;
 		};
-		DA80F43A2282D3A8004285F9 /* Release (Stagging) */ = {
+		DA80F43A2282D3A8004285F9 /* Stagging */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA931AF0228405BD0047DC90 /* Stagging.xcconfig */;
 			buildSettings = {
@@ -1284,173 +793,9 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = "Release (Stagging)";
+			name = Stagging;
 		};
-		DA80F43B2282D3A8004285F9 /* Release (Stagging) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BE44FE84D4B3F03EEA0DDEA /* Pods-demoCaptureImageTests.release (stagging).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/demoCaptureImage.app/demoCaptureImage";
-			};
-			name = "Release (Stagging)";
-		};
-		DA80F43C2282D3A8004285F9 /* Release (Stagging) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D4AC34C628317A22F687A6F /* Pods-demoCaptureImageUITests.release (stagging).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = demoCaptureImage;
-			};
-			name = "Release (Stagging)";
-		};
-		DA80F43D2282D3B0004285F9 /* Debug (Prod) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA931AEE228405BD0047DC90 /* Prod.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = "Debug (Prod)";
-		};
-		DA80F43E2282D3B0004285F9 /* Debug (Prod) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA931AEE228405BD0047DC90 /* Prod.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJFV9RP76W;
-				INFOPLIST_FILE = "demoCaptureImage/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImage;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = "Debug (Prod)";
-		};
-		DA80F43F2282D3B0004285F9 /* Debug (Prod) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2732FA86ECE1EF6A024EF68D /* Pods-demoCaptureImageTests.debug (prod).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/demoCaptureImage.app/demoCaptureImage";
-			};
-			name = "Debug (Prod)";
-		};
-		DA80F4402282D3B0004285F9 /* Debug (Prod) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DF0D3E2748E69E11B836CC2 /* Pods-demoCaptureImageUITests.debug (prod).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = demoCaptureImage;
-			};
-			name = "Debug (Prod)";
-		};
-		DA80F4412282D3C8004285F9 /* Release (Prod) */ = {
+		DA80F4412282D3C8004285F9 /* Prod */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA931AEE228405BD0047DC90 /* Prod.xcconfig */;
 			buildSettings = {
@@ -1504,9 +849,9 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Release (Prod)";
+			name = Prod;
 		};
-		DA80F4422282D3C8004285F9 /* Release (Prod) */ = {
+		DA80F4422282D3C8004285F9 /* Prod */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA931AEE228405BD0047DC90 /* Prod.xcconfig */;
 			buildSettings = {
@@ -1524,48 +869,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = "Release (Prod)";
-		};
-		DA80F4432282D3C8004285F9 /* Release (Prod) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B633DC8FF8289D51AF7B7F7 /* Pods-demoCaptureImageTests.release (prod).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/demoCaptureImage.app/demoCaptureImage";
-			};
-			name = "Release (Prod)";
-		};
-		DA80F4442282D3C8004285F9 /* Release (Prod) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4644C1B0B6EFB5F577F1C8D0 /* Pods-demoCaptureImageUITests.release (prod).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = demoCaptureImageUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.rakumo.demoCaptureImageUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = demoCaptureImage;
-			};
-			name = "Release (Prod)";
+			name = Prod;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1573,54 +877,22 @@
 		DA80F3FF2282D33F004285F9 /* Build configuration list for PBXProject "demoCaptureImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DA80F42A2282D341004285F9 /* Debug (Dev) */,
-				DA80F4352282D39B004285F9 /* Debug (Stagging) */,
-				DA80F43D2282D3B0004285F9 /* Debug (Prod) */,
-				DA80F42B2282D341004285F9 /* Release (Dev) */,
-				DA80F4392282D3A8004285F9 /* Release (Stagging) */,
-				DA80F4412282D3C8004285F9 /* Release (Prod) */,
+				DA80F42A2282D341004285F9 /* Dev */,
+				DA80F4392282D3A8004285F9 /* Stagging */,
+				DA80F4412282D3C8004285F9 /* Prod */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release (Dev)";
+			defaultConfigurationName = Dev;
 		};
 		DA80F42C2282D341004285F9 /* Build configuration list for PBXNativeTarget "demoCaptureImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DA80F42D2282D341004285F9 /* Debug (Dev) */,
-				DA80F4362282D39B004285F9 /* Debug (Stagging) */,
-				DA80F43E2282D3B0004285F9 /* Debug (Prod) */,
-				DA80F42E2282D341004285F9 /* Release (Dev) */,
-				DA80F43A2282D3A8004285F9 /* Release (Stagging) */,
-				DA80F4422282D3C8004285F9 /* Release (Prod) */,
+				DA80F42D2282D341004285F9 /* Dev */,
+				DA80F43A2282D3A8004285F9 /* Stagging */,
+				DA80F4422282D3C8004285F9 /* Prod */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release (Dev)";
-		};
-		DA80F42F2282D341004285F9 /* Build configuration list for PBXNativeTarget "demoCaptureImageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA80F4302282D341004285F9 /* Debug (Dev) */,
-				DA80F4372282D39B004285F9 /* Debug (Stagging) */,
-				DA80F43F2282D3B0004285F9 /* Debug (Prod) */,
-				DA80F4312282D341004285F9 /* Release (Dev) */,
-				DA80F43B2282D3A8004285F9 /* Release (Stagging) */,
-				DA80F4432282D3C8004285F9 /* Release (Prod) */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release (Dev)";
-		};
-		DA80F4322282D341004285F9 /* Build configuration list for PBXNativeTarget "demoCaptureImageUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA80F4332282D341004285F9 /* Debug (Dev) */,
-				DA80F4382282D39B004285F9 /* Debug (Stagging) */,
-				DA80F4402282D3B0004285F9 /* Debug (Prod) */,
-				DA80F4342282D341004285F9 /* Release (Dev) */,
-				DA80F43C2282D3A8004285F9 /* Release (Stagging) */,
-				DA80F4442282D3C8004285F9 /* Release (Prod) */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release (Dev)";
+			defaultConfigurationName = Dev;
 		};
 /* End XCConfigurationList section */
 	};

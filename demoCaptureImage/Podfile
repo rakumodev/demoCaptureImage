@@ -12,13 +12,3 @@ target 'demoCaptureImage' do
   # Pods for demoCaptureImage
   shared_pods
 end
-
-target 'demoCaptureImageTests' do
-  inherit! :search_paths
-  # Pods for testing
-end
-
-target 'demoCaptureImageUITests' do
-  inherit! :search_paths
-  # Pods for testing
-end
