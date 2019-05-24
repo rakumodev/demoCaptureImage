@@ -10,8 +10,7 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 //CocoaPod configurations
-#include "Pods/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.debug (dev).xcconfig"
-#include "Pods/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.release (dev).xcconfig"
+#include "Pods/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.dev.xcconfig"
 
 //App configurations
 APP_NAME = demo Dev
