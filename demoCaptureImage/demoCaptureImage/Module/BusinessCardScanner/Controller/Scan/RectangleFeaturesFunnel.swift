@@ -80,17 +80,19 @@ class RectangleFeaturesFunnel {
         let rectangleMatch = RectangleMatch(rectangleFeature: rectangleFeature)
         rectangles.append(rectangleMatch)
 
+        // Cần ít nhất 3 rectangleMatch để thực hiện so sánh
         guard rectangles.count >= minNumberOfRectangles else {
             return
         }
-
+        
+        // Nhiều hơn 8 rectangleMatch thì remove cái đầu tiên
         if rectangles.count > maxNumberOfRectangles {
             rectangles.removeFirst()
         }
 
-        updateRectangleMatches()
+        updateRectangleMatches(rectangles)
 
-        guard let bestRectangle = bestRectangle(withCurrentlyDisplayedRectangle: currentRectangle) else {
+        guard let bestRectangle = bestRectangle(withCurrentlyDisplayedRectangle: currentRectangle, rectangles) else {
             return
         }
 
@@ -106,13 +108,43 @@ class RectangleFeaturesFunnel {
         }
     }
 
+    func add(_ rectanglesFeature: [Quadrilateral], currentlyDisplayedRectangles currentRectangles: [RectangleDetectorResult]?) -> [Quadrilateral] {
+        rectanglesFeature.forEach { (rectangleFeature) in
+            let rectangleMatch = RectangleMatch(rectangleFeature: rectangleFeature)
+            rectangles.append(rectangleMatch)
+        }
+        
+        guard rectangles.count >= minNumberOfRectangles * rectanglesFeature.count else {
+            return []
+        }
+        
+        if rectangles.count > maxNumberOfRectangles * rectanglesFeature.count {
+            for _ in 0...rectanglesFeature.count {
+                rectangles.removeFirst()
+            }
+        }
+        
+        updateRectangleMatches(rectangles)
+        
+        var bestRectangles = [Quadrilateral]()
+        if currentRectangles?.count == 0 || currentRectangles?.count != rectanglesFeature.count {
+            bestRectangles = rectanglesFeature
+        }
+        currentRectangles?.forEach({ (currentRectangle) in
+            if let bestRectangle = bestRectangle(withCurrentlyDisplayedRectangle: currentRectangle.rectangle, rectangles) {
+                bestRectangles.append(bestRectangle.rectangleFeature)
+            }
+        })
+        return bestRectangles
+    }
+    
     /// Determines which rectangle is best to displayed.
     /// The criteria used to find the best rectangle is its matching score.
     /// If multiple rectangles have the same matching score, we use a tie breaker to find the best rectangle (@see breakTie(forRectangles:)).
     /// Parameters:
     ///   - currentRectangle: The currently displayed rectangle. This is used to avoid displaying very close rectangles.
     /// Returns: The best rectangle to display given the current history.
-    func bestRectangle(withCurrentlyDisplayedRectangle currentRectangle: Quadrilateral?) -> RectangleMatch? {
+    func bestRectangle(withCurrentlyDisplayedRectangle currentRectangle: Quadrilateral?, _ rectanglesMatch: [RectangleMatch]) -> RectangleMatch? {
         var bestMatch: RectangleMatch?
         guard !rectangles.isEmpty else { return nil }
         rectangles.reversed().forEach { (rectangle) in
@@ -132,7 +164,6 @@ class RectangleFeaturesFunnel {
                 bestMatch = breakTie(between: best, rect2: rectangle, currentRectangle: currentRectangle)
             }
         }
-
         return bestMatch
     }
 
@@ -157,8 +188,8 @@ class RectangleFeaturesFunnel {
     }
 
     /// Loops through all of the rectangles of the queue, and gives them a score depending on how many they match. @see `RectangleMatch.matchingScore`
-    func updateRectangleMatches() {
-        resetMatchingScores()
+    func updateRectangleMatches(_ rectangles: [RectangleMatch]) {
+        resetMatchingScores(rectangles)
         guard !rectangles.isEmpty else { return }
         for (i, currentRect) in rectangles.enumerated() {
             for (j, rect) in rectangles.enumerated() {
@@ -171,7 +202,7 @@ class RectangleFeaturesFunnel {
     }
 
     /// Resets the matching score of all of the rectangles in the queue to 0
-    func resetMatchingScores() {
+    func resetMatchingScores(_ rectangles: [RectangleMatch]) {
         guard !rectangles.isEmpty else { return }
         for rectangle in rectangles {
             rectangle.matchingScore = 1

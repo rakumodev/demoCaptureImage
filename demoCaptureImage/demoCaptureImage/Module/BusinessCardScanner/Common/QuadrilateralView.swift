@@ -138,24 +138,43 @@ class QuadrilateralView: UIView {
             layoutCornerViews(forQuad: quad)
         }
     }
+    
+    func drawQuadrilaterals(quads: [Quadrilateral]) {
+        quadView.layer.sublayers = nil
+        quads.forEach { (quad) in
+            drawQuad(quad)
+        }
+    }
 
-    func drawQuad(_ quad: Quadrilateral, animated: Bool) {
+    func drawQuad(_ quad: Quadrilateral, animated: Bool? = nil) {
         var path = quad.path
+
+        let layer = CAShapeLayer()
+        layer.strokeColor = UIColor.red.cgColor
+//        layer.fillColor = UIColor(white: 1.0, alpha: 0.8).cgColor
+        layer.fillColor = UIColor.clear.cgColor
+        layer.lineWidth = 3.0
+        layer.opacity = 1.0
+        layer.path = path.cgPath
+        quadView.layer.addSublayer(layer)
+        
 
         if editable {
             path = path.reversing()
             let rectPath = UIBezierPath(rect: bounds)
             path.append(rectPath)
         }
+//
+//        if animated == true {
+//            let pathAnimation = CABasicAnimation(keyPath: "path")
+//            pathAnimation.duration = 0.2
+//            quadLayer.add(pathAnimation, forKey: "path")
+//        }
+//
+//        quadLayer.path = path.cgPath
+//        quadLayer.isHidden = false
+//
 
-        if animated == true {
-            let pathAnimation = CABasicAnimation(keyPath: "path")
-            pathAnimation.duration = 0.2
-            quadLayer.add(pathAnimation, forKey: "path")
-        }
-
-        quadLayer.path = path.cgPath
-        quadLayer.isHidden = false
     }
 
     func layoutCornerViews(forQuad quad: Quadrilateral) {

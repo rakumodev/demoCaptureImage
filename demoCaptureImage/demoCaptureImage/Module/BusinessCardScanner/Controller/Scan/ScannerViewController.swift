@@ -277,6 +277,7 @@ class ScannerViewController: UIViewController {
 }
 
 extension ScannerViewController: RectangleDetectionDelegateProtocol {
+    
     func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didFailWithError error: Error) {
 
         activityIndicator.stopAnimating()
@@ -291,10 +292,9 @@ extension ScannerViewController: RectangleDetectionDelegateProtocol {
         shutterButton.isUserInteractionEnabled = false
     }
 
-    func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didCapturePicture picture: UIImage, withQuad quad: Quadrilateral?) {
+    func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didCapturePicture picture: UIImage, withQuad quad: [Quadrilateral]?) {
         activityIndicator.stopAnimating()
-
-        let editVC = EditScanViewController(image: picture, quad: quad)
+        let editVC = EditScanViewController(image: picture, quads: quad)
         navigationController?.pushViewController(editVC, animated: false)
 
         shutterButton.isUserInteractionEnabled = true
@@ -324,5 +324,30 @@ extension ScannerViewController: RectangleDetectionDelegateProtocol {
 
         quadView.drawQuadrilateral(quad: transformedQuad, animated: true)
     }
-
+    
+    func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didDetectQuads quads: [Quadrilateral]?, _ imageSize: CGSize) {
+        guard let quads = quads else {
+            // If no quad has been detected, we remove the currently displayed on on the quadView.
+            quadView.removeQuadrilateral()
+            return
+        }
+        let portraitImageSize = CGSize(width: imageSize.height, height: imageSize.width)
+        
+        let scaleTransform = CGAffineTransform.scaleTransform(forSize: portraitImageSize, aspectFillInSize: quadView.bounds.size)
+        let scaledImageSize = imageSize.applying(scaleTransform)
+        
+        let rotationTransform = CGAffineTransform(rotationAngle: CGFloat.pi / 2.0)
+        
+        let imageBounds = CGRect(origin: .zero, size: scaledImageSize).applying(rotationTransform)
+        
+        let translationTransform = CGAffineTransform.translateTransform(fromCenterOfRect: imageBounds, toCenterOfRect: quadView.bounds)
+        
+        let transforms = [scaleTransform, rotationTransform, translationTransform]
+        
+        var transformedQuads = [Quadrilateral]()
+        quads.forEach { (quad) in
+            transformedQuads.append(quad.applyTransforms(transforms))
+        }
+        quadView.drawQuadrilaterals(quads: transformedQuads)
+    }
 }
