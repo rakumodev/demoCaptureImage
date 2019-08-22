@@ -135,16 +135,16 @@ extension HomeViewController: ImageScannerControllerDelegate {
         DispatchQueue.main.async {
             if let error = error {
                 // we got back an error!
-                AlertUtils.showSimpleAlertView(with: "Save error", message: error.localizedDescription, self)
+                AlertUtils.showSimpleAlertView(with: "Save error", message: error.localizedDescription)
             } else {
-                AlertUtils.showSimpleAlertView(with: "Saved!", message: "Scanned image has been saved", self)
+                AlertUtils.showSimpleAlertView(with: "Saved!", message: "Scanned image has been saved")
             }
         }
     }
 
     func imageScannerController(_ scanner: ImageScannerController, didFailWithError error: Error) {
         DispatchQueue.main.async {
-            AlertUtils.showSimpleAlertView(with: "Error", message: error.localizedDescription, self)
+            AlertUtils.showSimpleAlertView(with: "Error", message: error.localizedDescription)
         }
         print(error)
     }

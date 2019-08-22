@@ -63,13 +63,13 @@ class ImageScannerController: UINavigationController {
         // If an image was passed in by the host app (e.g. picked from the photo library), use it instead of the document scanner.
         if let image = image {
 
-            var detectedQuad: Quadrilateral?
+            var detectedQuads: [Quadrilateral] = []
 
             // Whether or not we detect a quad, present the edit view controller after attempting to detect a quad.
             // *** Vision *requires* a completion block to detect rectangles, but it's instant.
             // *** When using Vision, we'll present the normal edit view controller first, then present the updated edit view controller later.
             defer {
-                let editViewController = EditScanViewController(image: image, quad: detectedQuad, rotateImage: false)
+                let editViewController = EditScanViewController(image: image, quads: detectedQuads, rotateImage: false)
                 setViewControllers([editViewController], animated: false)
             }
 
@@ -77,17 +77,22 @@ class ImageScannerController: UINavigationController {
 
             if #available(iOS 11.0, *) {
                 // Use the VisionRectangleDetector on iOS 11 to attempt to find a rectangle from the initial image.
-                VisionRectangleDetector.rectangle(forImage: ciImage) { (quad) in
-                    detectedQuad = quad
-                    detectedQuad?.reorganize()
+                VisionRectangleDetector.rectangles(forImage: ciImage) { (quads) in
+                    guard let quads = quads else { return }
+                    detectedQuads = quads
+                    for i in detectedQuads.indices {
+                        detectedQuads[i].reorganize()
+                    }
 
-                    let editViewController = EditScanViewController(image: image, quad: detectedQuad, rotateImage: false)
+                    let editViewController = EditScanViewController(image: image, quads: detectedQuads, rotateImage: false)
                     self.setViewControllers([editViewController], animated: true)
                 }
             } else {
                 // Use the CIRectangleDetector on iOS 10 to attempt to find a rectangle from the initial image.
-                detectedQuad = CIRectangleDetector.rectangle(forImage: ciImage)
-                detectedQuad?.reorganize()
+                detectedQuads = CIRectangleDetector.rectangles(forImage: ciImage)!
+                for i in detectedQuads.indices {
+                    detectedQuads[i].reorganize()
+                }
             }
         }
     }

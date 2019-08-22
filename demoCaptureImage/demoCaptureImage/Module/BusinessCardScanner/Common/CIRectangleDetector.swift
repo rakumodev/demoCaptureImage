@@ -30,4 +30,21 @@ struct CIRectangleDetector {
 
         return quads.biggest()
     }
+    
+    static func rectangles(forImage image: CIImage) -> [Quadrilateral]? {
+        guard let rectangleFeatures = rectangleDetector?.features(in: image) as? [CIRectangleFeature] else {
+            return nil
+        }
+        
+        let quads = rectangleFeatures.map { rectangle in
+            return Quadrilateral(rectangleFeature: rectangle)
+        }
+        return quads
+    }
+    
+    static func rectangles(forImage image: CIImage, completion: @escaping(([Quadrilateral]?) -> Void)) {
+        let rects = rectangles(forImage: image)
+        completion(rects)
+    }
+    
 }

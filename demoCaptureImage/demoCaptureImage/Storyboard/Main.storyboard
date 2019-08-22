@@ -91,10 +91,67 @@
             </objects>
             <point key="canvasLocation" x="3288" y="21"/>
         </scene>
+        <!--Data Source-->
+        <scene sceneID="bso-iu-9y8">
+            <objects>
+                <viewController storyboardIdentifier="ChooseImageViewController" id="rey-VZ-qCn" customClass="ChooseImageViewController" customModule="demoCaptureImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LV8-kn-Sxq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1v5-XA-Wt3" customClass="FSPageControl" customModule="FSPagerView">
+                                <rect key="frame" x="0.0" y="832" width="414" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ViB-x2-596"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lt3-34-TPa" customClass="FSPagerView" customModule="FSPagerView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rey-VZ-qCn" id="jrl-7y-Njf"/>
+                                    <outlet property="delegate" destination="rey-VZ-qCn" id="I0I-iq-I76"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lt3-34-TPa" firstAttribute="leading" secondItem="zCw-Ek-KOs" secondAttribute="leading" id="6FP-m1-jDL"/>
+                            <constraint firstItem="zCw-Ek-KOs" firstAttribute="trailing" secondItem="1v5-XA-Wt3" secondAttribute="trailing" id="JSD-Cu-tFX"/>
+                            <constraint firstItem="1v5-XA-Wt3" firstAttribute="bottom" secondItem="zCw-Ek-KOs" secondAttribute="bottom" id="XEb-cB-cQz"/>
+                            <constraint firstItem="Lt3-34-TPa" firstAttribute="bottom" secondItem="1v5-XA-Wt3" secondAttribute="bottom" id="dmX-Fe-mm6"/>
+                            <constraint firstItem="Lt3-34-TPa" firstAttribute="top" secondItem="zCw-Ek-KOs" secondAttribute="top" id="o4Y-bi-97U"/>
+                            <constraint firstItem="zCw-Ek-KOs" firstAttribute="trailing" secondItem="Lt3-34-TPa" secondAttribute="trailing" id="tOr-Mn-S7j"/>
+                            <constraint firstItem="1v5-XA-Wt3" firstAttribute="leading" secondItem="zCw-Ek-KOs" secondAttribute="leading" id="zuH-Se-wBr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zCw-Ek-KOs"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Choose" id="Ld3-BR-ujc">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="i9u-nz-T0w">
+                            <connections>
+                                <action selector="userTappedCancelButton:" destination="rey-VZ-qCn" id="Ssx-sg-FsQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="nWF-pU-J75">
+                            <connections>
+                                <action selector="userTappedDoneButton:" destination="rey-VZ-qCn" id="OEM-i5-ogh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pageControl" destination="1v5-XA-Wt3" id="eeE-IM-NCk"/>
+                        <outlet property="pagerView" destination="Lt3-34-TPa" id="ZNx-Tq-6eR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jDS-bd-1iZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5079.7101449275369" y="20.758928571428569"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="87m-of-QM8">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hkS-fQ-aKj" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginViewNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="hkS-fQ-aKj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PHQ-qd-2hI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -126,6 +183,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6KD-cl-ptb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2377" y="21"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bYL-CY-cVF">
+            <objects>
+                <navigationController storyboardIdentifier="ResultViewNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="4gc-6i-O7p" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0n5-6D-vD9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rey-VZ-qCn" kind="relationship" relationship="rootViewController" id="dVt-bY-OZa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D9X-ex-qkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4169.5652173913049" y="20.758928571428569"/>
         </scene>
     </scenes>
     <resources>

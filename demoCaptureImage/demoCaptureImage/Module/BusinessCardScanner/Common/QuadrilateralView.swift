@@ -33,17 +33,19 @@ class QuadrilateralView: UIView {
     }()
 
     /// The quadrilateral drawn on the view.
-    var quad: Quadrilateral?
+    var quads: [Quadrilateral]?
 
     var editable = false {
         didSet {
             cornerViews(hidden: !editable)
             quadLayer.fillColor = editable ? UIColor(white: 0.0, alpha: 0.6).cgColor : UIColor(white: 1.0, alpha: 0.5).cgColor
-            guard let quad = quad else {
+            guard let quads = quads else {
                 return
             }
-            drawQuad(quad, animated: false)
-            layoutCornerViews(forQuad: quad)
+            drawQuad(quads, animated: false)
+            quads.forEach { (quad) in
+                layoutCornerViews(forQuad: quad)
+            }
         }
     }
 
@@ -75,7 +77,7 @@ class QuadrilateralView: UIView {
 
     let highlightedCornerViewSize = CGSize(width: 75.0, height: 75.0)
     let cornerViewSize = CGSize(width: 20.0, height: 20.0)
-
+    var combinedPath = CGMutablePath()
     // MARK: - Life Cycle
 
     override init(frame: CGRect) {
@@ -119,8 +121,8 @@ class QuadrilateralView: UIView {
         }
 
         quadLayer.frame = bounds
-        if let quad = quad {
-            drawQuadrilateral(quad: quad, animated: false)
+        if let quads = quads {
+            drawQuadrilateral(quads: quads, animated: false)
         }
     }
 
@@ -130,32 +132,39 @@ class QuadrilateralView: UIView {
     ///
     /// - Parameters:
     ///   - quad: The quadrilateral to draw on the view. It should be in the coordinates of the current `QuadrilateralView` instance.
-    func drawQuadrilateral(quad: Quadrilateral, animated: Bool) {
-        self.quad = quad
-        drawQuad(quad, animated: animated)
+    func drawQuadrilateral(quads: [Quadrilateral], animated: Bool) {
+        removeQuadrilateral()
+        self.quads = quads
+        drawQuad(quads, animated: animated)
         if editable {
             cornerViews(hidden: false)
-            layoutCornerViews(forQuad: quad)
+            quads.forEach { (quad) in
+                layoutCornerViews(forQuad: quad)
+            }
         }
     }
 
-    func drawQuad(_ quad: Quadrilateral, animated: Bool) {
-        var path = quad.path
-
-        if editable {
-            path = path.reversing()
-            let rectPath = UIBezierPath(rect: bounds)
-            path.append(rectPath)
+    func drawQuad(_ quads: [Quadrilateral], animated: Bool) {
+        
+        quads.forEach { (quad) in
+            
+            var path = quad.path
+            
+            if editable {
+                path = path.reversing()
+                let rectPath = UIBezierPath(rect: bounds)
+                path.append(rectPath)
+            }
+            combinedPath.addPath(path.cgPath)
         }
-
         if animated == true {
             let pathAnimation = CABasicAnimation(keyPath: "path")
             pathAnimation.duration = 0.2
             quadLayer.add(pathAnimation, forKey: "path")
         }
-
-        quadLayer.path = path.cgPath
+        quadLayer.path = combinedPath
         quadLayer.isHidden = false
+
     }
 
     func layoutCornerViews(forQuad quad: Quadrilateral) {
@@ -166,6 +175,7 @@ class QuadrilateralView: UIView {
     }
 
     func removeQuadrilateral() {
+        combinedPath = CGMutablePath()
         quadLayer.path = nil
         quadLayer.isHidden = true
     }
@@ -173,17 +183,20 @@ class QuadrilateralView: UIView {
     // MARK: - Actions
 
     func moveCorner(cornerView: EditScanCornerView, atPoint point: CGPoint) {
-        guard let quad = quad else {
+        guard let quads = quads else {
             return
         }
 
         let validPoint = self.validPoint(point, forCornerViewOfSize: cornerView.bounds.size, inView: self)
 
         cornerView.center = validPoint
-        let updatedQuad = update(quad, withPosition: validPoint, forCorner: cornerView.position)
-
-        self.quad = updatedQuad
-        drawQuad(updatedQuad, animated: false)
+        var updatedQuads: [Quadrilateral] = []
+        quads.forEach { (quad) in
+            let updatedQuad = update(quad, withPosition: validPoint, forCorner: cornerView.position)
+            updatedQuads.append(updatedQuad)
+        }
+        self.quads = updatedQuads
+        drawQuad(updatedQuads, animated: false)
     }
 
     func highlightCornerAtPosition(position: CornerPosition, with image: UIImage) {

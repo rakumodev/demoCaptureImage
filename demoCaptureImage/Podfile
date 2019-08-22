@@ -6,6 +6,8 @@ def shared_pods
   pod 'GoogleSignIn'
   pod 'ProgressHUD'
   pod 'Alamofire', '~> 5.0.0-beta.5'
+  pod 'FSPagerView'
+  
 end
 
 target 'demoCaptureImage' do

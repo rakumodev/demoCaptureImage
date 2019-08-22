@@ -58,7 +58,7 @@ extension LoginViewController: GIDSignInDelegate {
                 //Authentication error
                 DispatchQueue.main.async {
                     ProgressHUD.dismiss()
-                    AlertUtils.showSimpleAlertView(with: "Error", message: error.localizedDescription, self)
+                    AlertUtils.showSimpleAlertView(with: "Error", message: error.localizedDescription)
                 }
                 print("\(error.localizedDescription)")
             } else {
@@ -81,7 +81,7 @@ extension LoginViewController: GIDSignInDelegate {
                             DispatchQueue.main.async {
                                 GIDSignIn.sharedInstance().disconnect()
                                 ProgressHUD.dismiss()
-                                AlertUtils.showSimpleAlertView(with: "Error", message: msgError!, self)
+                                AlertUtils.showSimpleAlertView(with: "Error", message: msgError!)
                             }
                             print(msgError!)
                         }

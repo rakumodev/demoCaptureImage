@@ -17,7 +17,7 @@ protocol RectangleDetectionDelegateProtocol: NSObjectProtocol {
     ///   - captureSessionManager: The `CaptureSessionManager` instance that has detected a quadrilateral.
     ///   - quad: The detected quadrilateral in the coordinates of the image.
     ///   - imageSize: The size of the image the quadrilateral has been detected on.
-    func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didDetectQuad quad: Quadrilateral?, _ imageSize: CGSize)
+    func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didDetectQuads quads: [Quadrilateral]?, _ imageSize: CGSize)
 
     /// Called when a picture with or without a quadrilateral has been captured.
     ///
@@ -25,7 +25,7 @@ protocol RectangleDetectionDelegateProtocol: NSObjectProtocol {
     ///   - captureSessionManager: The `CaptureSessionManager` instance that has captured a picture.
     ///   - picture: The picture that has been captured.
     ///   - quad: The quadrilateral that was detected in the picture's coordinates if any.
-    func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didCapturePicture picture: UIImage, withQuad quad: Quadrilateral?)
+    func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didCapturePicture picture: UIImage, withQuads quads: [Quadrilateral]?)
 
     /// Called when an error occured with the capture session manager.
     /// - Parameters:
@@ -42,6 +42,7 @@ class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
     let rectangleFunnel = RectangleFeaturesFunnel()
     weak var delegate: RectangleDetectionDelegateProtocol?
     var displayedRectangleResult: RectangleDetectorResult?
+    var currentDisplayedRectangleResult: RectangleDetectorResult?
     var photoOutput = AVCapturePhotoOutput()
 
     /// Whether the CaptureSessionManager should be detecting quadrilaterals.
@@ -160,34 +161,54 @@ class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         let imageSize = CGSize(width: CVPixelBufferGetWidth(pixelBuffer), height: CVPixelBufferGetHeight(pixelBuffer))
 
         if #available(iOS 11.0, *) {
-            VisionRectangleDetector.rectangle(forPixelBuffer: pixelBuffer) { (rectangle) in
-                self.processRectangle(rectangle: rectangle, imageSize: imageSize)
+            VisionRectangleDetector.rectangles(forPixelBuffer: pixelBuffer) { (rectangles) in
+                guard let rectangles = rectangles else { return }
+                if !rectangles.isEmpty {
+                    self.processRectangle(rectangles: rectangles, imageSize: imageSize)
+                }
             }
         } else {
             let finalImage = CIImage(cvPixelBuffer: pixelBuffer)
-            CIRectangleDetector.rectangle(forImage: finalImage) { (rectangle) in
-                self.processRectangle(rectangle: rectangle, imageSize: imageSize)
+            CIRectangleDetector.rectangles(forImage: finalImage) { (rectangles) in
+                guard let rectangles = rectangles else { return }
+                if !rectangles.isEmpty {
+                    self.processRectangle(rectangles: rectangles, imageSize: imageSize)
+                }
             }
         }
     }
 
-    func processRectangle(rectangle: Quadrilateral?, imageSize: CGSize) {
-        if let rectangle = rectangle {
+    func processRectangle(rectangles: [Quadrilateral]?, imageSize: CGSize) {
 
+        var rectangleFunnels: [Quadrilateral] = []
+        if let rectangles = rectangles {
             self.noRectangleCount = 0
-            self.rectangleFunnel.add(rectangle, currentlyDisplayedRectangle: self.displayedRectangleResult?.rectangle) { [weak self] (result, rectangle) in
-
-                guard let strongSelf = self else {
-                    return
+            let block = DispatchGroup()
+            if let rectangleResults = displayedRectangleResult?.rectangles {
+                for rectangle in rectangles {
+                    for displayedRectangleResult in rectangleResults {
+                        block.enter()
+                        self.rectangleFunnel.add(rectangle, currentlyDisplayedRectangle: displayedRectangleResult) { (_, rectangle) in
+                            rectangleFunnels.append(rectangle)
+                            block.leave()
+                        }
+                    }
                 }
-
-                let shouldAutoScan = (result == .showAndAutoScan)
-                strongSelf.displayRectangleResult(rectangleResult: RectangleDetectorResult(rectangle: rectangle, imageSize: imageSize))
-                if shouldAutoScan, CaptureSession.current.isAutoScanEnabled, !CaptureSession.current.isEditing {
-                    capturePhoto()
+            } else {
+                for rectangle in rectangles {
+                    block.enter()
+                    self.rectangleFunnel.add(rectangle, currentlyDisplayedRectangle: nil) { (_, rectangle) in
+                        rectangleFunnels.append(rectangle)
+                        block.leave()
+                    }
                 }
             }
-
+            block.notify(queue: .global()) { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.displayRectangleResult(rectangleResult: RectangleDetectorResult(rectangles: rectangleFunnels, imageSize: imageSize))
+                // Remove the currently displayed rectangle after one process session finish
+                strongSelf.displayedRectangleResult = nil
+            }
         } else {
 
             DispatchQueue.main.async { [weak self] in
@@ -202,7 +223,7 @@ class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
 
                     // Remove the currently displayed rectangle as no rectangles are being found anymore
                     strongSelf.displayedRectangleResult = nil
-                    strongSelf.delegate?.captureSessionManager(strongSelf, didDetectQuad: nil, imageSize)
+                    strongSelf.delegate?.captureSessionManager(strongSelf, didDetectQuads: nil, imageSize)
                 }
             }
             return
@@ -210,20 +231,24 @@ class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         }
     }
 
-    @discardableResult func displayRectangleResult(rectangleResult: RectangleDetectorResult) -> Quadrilateral {
+    @discardableResult func displayRectangleResult(rectangleResult: RectangleDetectorResult) -> [Quadrilateral] {
         displayedRectangleResult = rectangleResult
-
-        let quad = rectangleResult.rectangle.toCartesian(withHeight: rectangleResult.imageSize.height)
+        currentDisplayedRectangleResult = displayedRectangleResult
+        var quads: [Quadrilateral] = []
+        rectangleResult.rectangles.forEach { (quad) in
+            let quad = quad.toCartesian(withHeight: rectangleResult.imageSize.height)
+            quads.append(quad)
+        }
 
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else {
                 return
             }
 
-            strongSelf.delegate?.captureSessionManager(strongSelf, didDetectQuad: quad, rectangleResult.imageSize)
+            strongSelf.delegate?.captureSessionManager(strongSelf, didDetectQuads: quads, rectangleResult.imageSize)
         }
 
-        return quad
+        return quads
     }
 
 }
@@ -302,17 +327,20 @@ extension CaptureSessionManager: AVCapturePhotoCaptureDelegate {
                 break
             }
 
-            var quad: Quadrilateral?
-            if let displayedRectangleResult = self?.displayedRectangleResult {
-                quad = self?.displayRectangleResult(rectangleResult: displayedRectangleResult)
-                quad = quad?.scale(displayedRectangleResult.imageSize, image.size, withRotationAngle: angle)
+            var quads: [Quadrilateral] = []
+            if let displayedRectangleResult = self?.currentDisplayedRectangleResult {
+                guard let strongSelf = self else { return }
+                quads = strongSelf.displayRectangleResult(rectangleResult: displayedRectangleResult)
+                for i in quads.indices {
+                    quads[i] = quads[i].scale(displayedRectangleResult.imageSize, image.size, withRotationAngle: angle)
+                }
             }
 
             DispatchQueue.main.async {
                 guard let strongSelf = self else {
                     return
                 }
-                strongSelf.delegate?.captureSessionManager(strongSelf, didCapturePicture: image, withQuad: quad)
+                strongSelf.delegate?.captureSessionManager(strongSelf, didCapturePicture: image, withQuads: quads)
             }
         }
     }
@@ -322,7 +350,7 @@ extension CaptureSessionManager: AVCapturePhotoCaptureDelegate {
  struct RectangleDetectorResult {
 
     /// The detected quadrilateral.
-    let rectangle: Quadrilateral
+    var rectangles: [Quadrilateral]
 
     /// The size of the image the quadrilateral was detected on.
     let imageSize: CGSize

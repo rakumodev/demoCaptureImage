@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		322AFDA9639DB152F07687C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322AFD834A25B4295A6FBE3F /* Assets.xcassets */; };
 		7C7EDCBE90E8DFE0D164FD51 /* Pods_demoCaptureImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA726276AFE7EDA1C2D14E3 /* Pods_demoCaptureImage.framework */; };
 		DA0CA0B7229234E900919BE8 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0CA0B5229234E800919BE8 /* GlobalConstant.swift */; };
 		DA0CA0B8229234E900919BE8 /* ConstantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0CA0B6229234E800919BE8 /* ConstantAPI.swift */; };
@@ -49,7 +50,7 @@
 		DA1CC01F2289435B0046B4D0 /* MockCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC01E2289435B0046B4D0 /* MockCaptureDevice.swift */; };
 		DA1CC021228943810046B4D0 /* ImageScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1CC020228943810046B4D0 /* ImageScannerController.swift */; };
 		DA285529228A4D0D00585A3F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA285528228A4D0D00585A3F /* APIManager.swift */; };
-		DA80F40F2282D341004285F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA80F40E2282D341004285F9 /* Assets.xcassets */; };
+		DA29DF1122A75FFD00E6DEDB /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29DF1022A75FFD00E6DEDB /* ChooseImageViewController.swift */; };
 		DA931AF1228405BD0047DC90 /* Prod.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DA931AEE228405BD0047DC90 /* Prod.xcconfig */; };
 		DA931AF2228405BD0047DC90 /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DA931AEF228405BD0047DC90 /* Dev.xcconfig */; };
 		DA931AF3228405BD0047DC90 /* Stagging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DA931AF0228405BD0047DC90 /* Stagging.xcconfig */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		216332BB7836B857300AC24C /* Pods-demoCaptureImage.stagging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.stagging.xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.stagging.xcconfig"; sourceTree = "<group>"; };
+		322AFD834A25B4295A6FBE3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		533C9D5B50ECA415E861C18A /* Pods-demoCaptureImage.prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoCaptureImage.prod.xcconfig"; path = "Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage.prod.xcconfig"; sourceTree = "<group>"; };
 		DA0CA0B5229234E800919BE8 /* GlobalConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		DA0CA0B6229234E800919BE8 /* ConstantAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantAPI.swift; sourceTree = "<group>"; };
@@ -105,8 +107,8 @@
 		DA1CC01E2289435B0046B4D0 /* MockCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCaptureDevice.swift; sourceTree = "<group>"; };
 		DA1CC020228943810046B4D0 /* ImageScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScannerController.swift; sourceTree = "<group>"; };
 		DA285528228A4D0D00585A3F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		DA29DF1022A75FFD00E6DEDB /* ChooseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
 		DA80F4042282D33F004285F9 /* demoCaptureImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoCaptureImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA80F40E2282D341004285F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA80F41C2282D341004285F9 /* demoCaptureImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoCaptureImageTests.swift; sourceTree = "<group>"; };
 		DA80F41E2282D341004285F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA80F4272282D341004285F9 /* demoCaptureImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoCaptureImageUITests.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				DA0CA0BA2292356600919BE8 /* Info.plist */,
+				322AFD834A25B4295A6FBE3F /* Assets.xcassets */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 		DA1CBFDF22892A760046B4D0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DA29DF0F22A75FB200E6DEDB /* Choose */,
 				DA1CBFE022892A760046B4D0 /* Scan */,
 				DA1CBFE122892A760046B4D0 /* Edit */,
 				DA1CBFE222892A760046B4D0 /* Review */,
@@ -314,6 +318,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		DA29DF0F22A75FB200E6DEDB /* Choose */ = {
+			isa = PBXGroup;
+			children = (
+				DA29DF1022A75FFD00E6DEDB /* ChooseImageViewController.swift */,
+			);
+			path = Choose;
+			sourceTree = "<group>";
+		};
 		DA80F3FB2282D33F004285F9 = {
 			isa = PBXGroup;
 			children = (
@@ -349,7 +361,6 @@
 				DA931AF5228405FD0047DC90 /* App */,
 				DA931AF4228405FD0047DC90 /* Controller */,
 				DA931AF6228405FD0047DC90 /* Storyboard */,
-				DA80F40E2282D341004285F9 /* Assets.xcassets */,
 			);
 			path = demoCaptureImage;
 			sourceTree = "<group>";
@@ -479,12 +490,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA80F40F2282D341004285F9 /* Assets.xcassets in Resources */,
 				DA931AF3228405BD0047DC90 /* Stagging.xcconfig in Resources */,
 				DA931AF2228405BD0047DC90 /* Dev.xcconfig in Resources */,
 				DA931AFD228406C70047DC90 /* Main.storyboard in Resources */,
 				DA931AFE228406C70047DC90 /* LaunchScreen.storyboard in Resources */,
 				DA931AF1228405BD0047DC90 /* Prod.xcconfig in Resources */,
+				322AFDA9639DB152F07687C2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,16 +508,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -519,22 +525,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-demoCaptureImage/Pods-demoCaptureImage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -619,6 +614,7 @@
 				DA1CC0082289418C0046B4D0 /* CaptureSession+Orientation.swift in Sources */,
 				DA1CBFE622892A8C0046B4D0 /* CIRectangleDetector.swift in Sources */,
 				DA1CBFD22289229B0046B4D0 /* ActionModel.swift in Sources */,
+				DA29DF1122A75FFD00E6DEDB /* ChooseImageViewController.swift in Sources */,
 				DA1CBFFC2289403F0046B4D0 /* EditScanViewController.swift in Sources */,
 				DA1CBFCD228907A20046B4D0 /* UIWindowExtension.swift in Sources */,
 				DA1CBFF022892AF10046B4D0 /* EditScanCornerView.swift in Sources */,
