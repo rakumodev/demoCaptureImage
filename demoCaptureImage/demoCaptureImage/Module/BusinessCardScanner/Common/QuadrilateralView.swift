@@ -184,12 +184,10 @@ class QuadrilateralView: UIView {
     }
     
     func editNextQuad() -> Bool {
-        for index in 0..<(quads ?? []).count {
-            if quads?[index] == quadSelected {
+        for index in 0..<(quads ?? []).count where quads?[index] == quadSelected {
                 quads?[index].editable = true
-            }
         }
-        let filter = quads?.filter{$0.editable == false}
+        let filter = quads?.filter {$0.editable == false}
         guard let quad = filter?.first else {
             cornerViews(hidden: true)
             return false
@@ -201,13 +199,11 @@ class QuadrilateralView: UIView {
     }
     
     func editPrevQuad() {
-        for index in 0..<(quads ?? []).count {
-            if quads?[index] == quadPrevious {
-                quads?[index].editable = false
-                quadSelected = quadPrevious
-                if index > 0 {
-                    quadPrevious = quads?[index - 1]
-                }
+        for index in 0..<(quads ?? []).count where quads?[index] == quadPrevious {
+            quads?[index].editable = false
+            quadSelected = quadPrevious
+            if index > 0 {
+                quadPrevious = quads?[index - 1]
             }
         }
         if let quad = quadSelected {

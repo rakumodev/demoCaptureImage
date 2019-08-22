@@ -2,13 +2,13 @@ import Foundation
 import AVFoundation
 import UIKit
 
-protocol ZoomGestureControllerDelegate: class{
+protocol ZoomGestureControllerDelegate: class {
     func zoomGestureController(_ gesture: ZoomGestureController, editable: Bool)
 }
 
 class ZoomGestureController {
 
-    weak var delegate: ZoomGestureControllerDelegate? = nil
+    weak var delegate: ZoomGestureControllerDelegate?
     
     let image: UIImage
     let quadView: QuadrilateralView

@@ -28,7 +28,8 @@ class ChooseImageViewController: UIViewController {
     }
 
     var scannedImages: [UIImage] = []
-
+    var rotationAngle = Measurement<UnitAngle>(value: 0, unit: .degrees)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -39,11 +40,38 @@ class ChooseImageViewController: UIViewController {
     
     @IBAction func userTappedDoneButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+        finishScan()
+    }
+    
+    @objc func finishScan() {
+        guard let scannedImages = self.scannedImages as [UIImage]? else {
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
+            return
+        }
+        scannedImages.forEach { (scannedImage) in
+            //Saving image
+            UIImageWriteToSavedPhotosAlbum(scannedImage, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+        }
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    //Add image to library
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            debugPrint(error.localizedDescription)
+        } else {
+            debugPrint("Scanned image has been saved")
+        }
     }
     
 }
 
-//MARK:- FSPagerViewDelegate
+// MARK: - FSPagerViewDelegate
 extension ChooseImageViewController: FSPagerViewDataSource, FSPagerViewDelegate {
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
