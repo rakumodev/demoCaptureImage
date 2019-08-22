@@ -40,7 +40,7 @@ class EditScanViewController: UIViewController {
     let image: UIImage
 
     /// The detected quadrilateral that can be edited by the user. Uses the image's coordinates.
-    var quads = [Quadrilateral]()
+    var quad: Quadrilateral
 
     var zoomGestureController: ZoomGestureController!
 
@@ -49,9 +49,9 @@ class EditScanViewController: UIViewController {
 
     // MARK: - Life Cycle
 
-    init(image: UIImage, quads: [Quadrilateral]?, rotateImage: Bool = true) {
+    init(image: UIImage, quad: Quadrilateral?, rotateImage: Bool = true) {
         self.image = rotateImage ? image.applyingPortraitOrientation() : image
-        self.quads = quads ?? EditScanViewController.defaultQuad(forImage: image)
+        self.quad = quad ?? EditScanViewController.defaultQuad(forImage: image)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -78,7 +78,7 @@ class EditScanViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         adjustQuadViewConstraints()
-        displayQuad(quads)
+        displayQuad()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -128,38 +128,36 @@ class EditScanViewController: UIViewController {
                 }
                 return
         }
-        var quadsTmp = [Quadrilateral]()
-        quads.forEach { ( quad) in
-            quadsTmp.append(quad.scale(quadView.bounds.size, image.size))
-        }
-        self.quads = quadsTmp
 
-//        var cartesianScaledQuad = scaledQuad.toCartesian(withHeight: image.size.height)
-//        cartesianScaledQuad.reorganize()
-//
-//        let filteredImage = ciImage.applyingFilter("CIPerspectiveCorrection", parameters: [
-//            "inputTopLeft": CIVector(cgPoint: cartesianScaledQuad.bottomLeft),
-//            "inputTopRight": CIVector(cgPoint: cartesianScaledQuad.bottomRight),
-//            "inputBottomLeft": CIVector(cgPoint: cartesianScaledQuad.topLeft),
-//            "inputBottomRight": CIVector(cgPoint: cartesianScaledQuad.topRight)
-//            ])
-//
-//        let enhancedImage = filteredImage.applyingAdaptiveThreshold()?.withFixedOrientation()
-//
-//        var uiImage: UIImage!
-//
-//        // Let's try to generate the CGImage from the CIImage before creating a UIImage.
-//        if let cgImage = CIContext(options: nil).createCGImage(filteredImage, from: filteredImage.extent) {
-//            uiImage = UIImage(cgImage: cgImage)
-//        } else {
-//            uiImage = UIImage(ciImage: filteredImage, scale: 1.0, orientation: .up)
-//        }
-//
-//        let finalImage = uiImage.withFixedOrientation()
-//
-//        let results = ImageScannerResults(originalImage: image, scannedImage: finalImage, enhancedImage: enhancedImage, doesUserPreferEnhancedImage: false, detectedRectangle: scaledQuad)
-//        let reviewViewController = ReviewViewController(results: results)
-//        navigationController?.pushViewController(reviewViewController, animated: true)
+        let scaledQuad = quad.scale(quadView.bounds.size, image.size)
+        self.quad = scaledQuad
+
+        var cartesianScaledQuad = scaledQuad.toCartesian(withHeight: image.size.height)
+        cartesianScaledQuad.reorganize()
+
+        let filteredImage = ciImage.applyingFilter("CIPerspectiveCorrection", parameters: [
+            "inputTopLeft": CIVector(cgPoint: cartesianScaledQuad.bottomLeft),
+            "inputTopRight": CIVector(cgPoint: cartesianScaledQuad.bottomRight),
+            "inputBottomLeft": CIVector(cgPoint: cartesianScaledQuad.topLeft),
+            "inputBottomRight": CIVector(cgPoint: cartesianScaledQuad.topRight)
+            ])
+
+        let enhancedImage = filteredImage.applyingAdaptiveThreshold()?.withFixedOrientation()
+
+        var uiImage: UIImage!
+
+        // Let's try to generate the CGImage from the CIImage before creating a UIImage.
+        if let cgImage = CIContext(options: nil).createCGImage(filteredImage, from: filteredImage.extent) {
+            uiImage = UIImage(cgImage: cgImage)
+        } else {
+            uiImage = UIImage(ciImage: filteredImage, scale: 1.0, orientation: .up)
+        }
+
+        let finalImage = uiImage.withFixedOrientation()
+
+        let results = ImageScannerResults(originalImage: image, scannedImage: finalImage, enhancedImage: enhancedImage, doesUserPreferEnhancedImage: false, detectedRectangle: scaledQuad)
+        let reviewViewController = ReviewViewController(results: results)
+        navigationController?.pushViewController(reviewViewController, animated: true)
     }
     
     @objc func dismissViewController() {
@@ -168,20 +166,15 @@ class EditScanViewController: UIViewController {
         }
     }
 
-    func displayQuad(_ quadrilaterals: [Quadrilateral]) {
+    func displayQuad() {
         let imageSize = image.size
         let imageFrame = CGRect(origin: quadView.frame.origin, size: CGSize(width: quadViewWidthConstraint.constant, height: quadViewHeightConstraint.constant))
 
         let scaleTransform = CGAffineTransform.scaleTransform(forSize: imageSize, aspectFillInSize: imageFrame.size)
         let transforms = [scaleTransform]
-        
-        var transformedQuads = [Quadrilateral]()
-        quadrilaterals.forEach { (quadrilateral) in
-            let transformedQuad = quadrilateral.applyTransforms(transforms)
-            transformedQuads.append(transformedQuad)
-        }
-        quadView.drawQuadrilaterals(quads: transformedQuads)
-//        quadView.drawQuadrilateral(quad: transformedQuad, animated: false)
+        let transformedQuad = quad.applyTransforms(transforms)
+
+        quadView.drawQuadrilateral(quad: transformedQuad, animated: false)
     }
 
     /// The quadView should be lined up on top of the actual image displayed by the imageView.
@@ -193,7 +186,7 @@ class EditScanViewController: UIViewController {
     }
 
     /// Generates a `Quadrilateral` object that's centered and one third of the size of the passed in image.
-    static func defaultQuad(forImage image: UIImage) -> [Quadrilateral] {
+    static func defaultQuad(forImage image: UIImage) -> Quadrilateral {
         let topLeft = CGPoint(x: image.size.width / 3.0, y: image.size.height / 3.0)
         let topRight = CGPoint(x: 2.0 * image.size.width / 3.0, y: image.size.height / 3.0)
         let bottomRight = CGPoint(x: 2.0 * image.size.width / 3.0, y: 2.0 * image.size.height / 3.0)
@@ -201,7 +194,7 @@ class EditScanViewController: UIViewController {
 
         let quad = Quadrilateral(topLeft: topLeft, topRight: topRight, bottomRight: bottomRight, bottomLeft: bottomLeft)
 
-        return [quad]
+        return quad
     }
 
 }
