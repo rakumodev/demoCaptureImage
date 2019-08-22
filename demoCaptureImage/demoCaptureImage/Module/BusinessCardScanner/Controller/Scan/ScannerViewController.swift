@@ -302,14 +302,13 @@ extension ScannerViewController: RectangleDetectionDelegateProtocol {
     }
 
     func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didDetectQuads quads: [Quadrilateral]?, _ imageSize: CGSize) {
+
         guard var quads = quads else {
             // If no quad has been detected, we remove the currently displayed on on the quadView.
             quadView.removeQuadrilateral()
             return
         }
-        
-//        var transformedQuads: [Quadrilateral] = []
-        
+
         let portraitImageSize = CGSize(width: imageSize.height, height: imageSize.width)
         
         let scaleTransform = CGAffineTransform.scaleTransform(forSize: portraitImageSize, aspectFillInSize: quadView.bounds.size)
@@ -322,13 +321,16 @@ extension ScannerViewController: RectangleDetectionDelegateProtocol {
         let translationTransform = CGAffineTransform.translateTransform(fromCenterOfRect: imageBounds, toCenterOfRect: quadView.bounds)
         
         let transforms = [scaleTransform, rotationTransform, translationTransform]
+
         for (i, quad) in quads.enumerated() {
             quads[i] = quad.applyTransforms(transforms)
         }
+
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.quadView.drawQuadrilateral(quads: quads, animated: true)
         }
+
     }
 
 }

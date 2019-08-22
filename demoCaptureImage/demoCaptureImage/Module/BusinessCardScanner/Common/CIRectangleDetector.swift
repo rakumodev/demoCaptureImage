@@ -30,7 +30,12 @@ struct CIRectangleDetector {
 
         return quads.biggest()
     }
-    
+
+    /// Detects rectangles from the given image on iOS 10.
+    ///
+    /// - Parameters:
+    ///   - image: The image to detect rectangles on.
+    /// - Returns: List of detected rectangle on the image.
     static func rectangles(forImage image: CIImage) -> [Quadrilateral]? {
         guard let rectangleFeatures = rectangleDetector?.features(in: image) as? [CIRectangleFeature] else {
             return nil

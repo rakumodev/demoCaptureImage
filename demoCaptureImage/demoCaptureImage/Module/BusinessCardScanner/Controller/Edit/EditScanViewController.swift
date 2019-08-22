@@ -36,7 +36,7 @@ class EditScanViewController: UIViewController {
         return button
     }()
 
-    /// The image the quadrilateral was detected on.
+    /// The image the quadrilaterals was detected on.
     let image: UIImage
 
     /// The detected quadrilateral that can be edited by the user. Uses the image's coordinates.
@@ -120,6 +120,7 @@ class EditScanViewController: UIViewController {
     // MARK: - Actions
 
     @objc func pushReviewController() {
+
         guard let quads = quadView.quads,
             let ciImage = CIImage(image: image) else {
                 if let imageScannerController = navigationController as? ImageScannerController {
@@ -130,10 +131,10 @@ class EditScanViewController: UIViewController {
         }
         
         var finalImages: [UIImage] = []
+
         quads.forEach { (quad) in
+
             let scaledQuad = quad.scale(quadView.bounds.size, image.size)
-//            self.quad = scaledQuad
-            
             var cartesianScaledQuad = scaledQuad.toCartesian(withHeight: image.size.height)
             cartesianScaledQuad.reorganize()
             
@@ -143,9 +144,7 @@ class EditScanViewController: UIViewController {
                 "inputBottomLeft": CIVector(cgPoint: cartesianScaledQuad.topLeft),
                 "inputBottomRight": CIVector(cgPoint: cartesianScaledQuad.topRight)
                 ])
-            
-//            let enhancedImage = filteredImage.applyingAdaptiveThreshold()?.withFixedOrientation()
-            
+
             var uiImage: UIImage!
             
             // Let's try to generate the CGImage from the CIImage before creating a UIImage.
@@ -159,9 +158,6 @@ class EditScanViewController: UIViewController {
             finalImages.append(finalImage)
         }
         
-//        let results = ImageScannerResults(originalImage: image, scannedImage: finalImage, enhancedImage: enhancedImage, doesUserPreferEnhancedImage: false, detectedRectangle: scaledQuad)
-//        let reviewViewController = ReviewViewController(results: results)
-//        navigationController?.pushViewController(reviewViewController, animated: true)
         guard let chooseViewController = ChooseImageViewController.storyboardInstance() else { return }
         chooseViewController.scannedImages = finalImages
         navigationController?.pushViewController(chooseViewController, animated: true)

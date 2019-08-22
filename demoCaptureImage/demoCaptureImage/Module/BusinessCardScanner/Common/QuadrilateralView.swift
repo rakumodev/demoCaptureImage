@@ -131,7 +131,7 @@ class QuadrilateralView: UIView {
     /// Draws the passed in quadrilateral.
     ///
     /// - Parameters:
-    ///   - quad: The quadrilateral to draw on the view. It should be in the coordinates of the current `QuadrilateralView` instance.
+    ///   - quads: List of quadrilateral to draw on the view. It should be in the coordinates of the current `QuadrilateralView` instance.
     func drawQuadrilateral(quads: [Quadrilateral], animated: Bool) {
         removeQuadrilateral()
         self.quads = quads

@@ -43,6 +43,7 @@ class ChooseImageViewController: UIViewController {
     
 }
 
+//MARK:- FSPagerViewDelegate
 extension ChooseImageViewController: FSPagerViewDataSource, FSPagerViewDelegate {
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {

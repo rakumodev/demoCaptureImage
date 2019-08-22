@@ -235,6 +235,7 @@ class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         displayedRectangleResult = rectangleResult
         currentDisplayedRectangleResult = displayedRectangleResult
         var quads: [Quadrilateral] = []
+
         rectangleResult.rectangles.forEach { (quad) in
             let quad = quad.toCartesian(withHeight: rectangleResult.imageSize.height)
             quads.append(quad)
@@ -349,7 +350,7 @@ extension CaptureSessionManager: AVCapturePhotoCaptureDelegate {
 /// Data structure representing the result of the detection of a quadrilateral.
  struct RectangleDetectorResult {
 
-    /// The detected quadrilateral.
+    /// The detected quadrilaterals.
     var rectangles: [Quadrilateral]
 
     /// The size of the image the quadrilateral was detected on.

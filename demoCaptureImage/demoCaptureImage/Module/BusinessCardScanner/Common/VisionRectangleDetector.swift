@@ -107,7 +107,7 @@ struct VisionRectangleDetector {
     ///
     /// - Parameters:
     ///   - image: The image to detect rectangles on.
-    /// - Returns: The biggest rectangle detected on the image.
+    /// - Returns: List of rectangle detected on the image.
     static func rectangles(forImage image: CIImage, completion: @escaping (([Quadrilateral]?) -> Void)) {
         let imageRequestHandler = VNImageRequestHandler(ciImage: image, options: [:])
         VisionRectangleDetector.completeImageRequestMultiObject(for: imageRequestHandler, width: image.extent.width, height: image.extent.height, completion: completion)
@@ -117,7 +117,7 @@ struct VisionRectangleDetector {
     ///
     /// - Parameters:
     ///   - pixelBuffer: The pixelBuffer to detect rectangles on.
-    ///   - completion: The biggest rectangle on the CVPixelBuffer
+    ///   - completion: List of rectangle on the CVPixelBuffer
     static func rectangles(forPixelBuffer pixelBuffer: CVPixelBuffer, completion: @escaping (([Quadrilateral]?) -> Void)) {
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
         VisionRectangleDetector.completeImageRequestMultiObject(
