@@ -6,6 +6,8 @@ import UIKit
 /// A data structure representing a quadrilateral and its position. This class exists to bypass the fact that CIRectangleFeature is read-only.
 struct Quadrilateral: Transformable {
 
+    var editable = false
+    
     /// A point that specifies the top left corner of the quadrilateral.
     var topLeft: CGPoint
 
@@ -202,6 +204,16 @@ extension Quadrilateral {
         let bottomLeft = self.bottomLeft.cartesian(withHeight: height)
 
         return Quadrilateral(topLeft: topLeft, topRight: topRight, bottomRight: bottomRight, bottomLeft: bottomLeft)
+    }
+    
+    func checkPoint(_ point: CGPoint) -> Bool {
+        let points = [topLeft, topRight, bottomLeft, bottomRight]
+        for _point in points {
+            if point.x == _point.x && point.y == _point.y {
+                return true
+            }
+        }
+        return false
     }
 }
 

@@ -34,7 +34,9 @@ class QuadrilateralView: UIView {
 
     /// The quadrilateral drawn on the view.
     var quads: [Quadrilateral]?
-
+    var quadPrevious: Quadrilateral?
+    var quadSelected: Quadrilateral?
+    
     var editable = false {
         didSet {
             cornerViews(hidden: !editable)
@@ -78,6 +80,7 @@ class QuadrilateralView: UIView {
     let highlightedCornerViewSize = CGSize(width: 75.0, height: 75.0)
     let cornerViewSize = CGSize(width: 20.0, height: 20.0)
     var combinedPath = CGMutablePath()
+    var previousPoint: CGPoint?
     // MARK: - Life Cycle
 
     override init(frame: CGRect) {
@@ -138,14 +141,14 @@ class QuadrilateralView: UIView {
         drawQuad(quads, animated: animated)
         if editable {
             cornerViews(hidden: false)
-            quads.forEach { (quad) in
-                layoutCornerViews(forQuad: quad)
+            if let quadSelected = quadSelected {
+                layoutCornerViews(forQuad: quadSelected)
             }
         }
     }
 
     func drawQuad(_ quads: [Quadrilateral], animated: Bool) {
-        
+        removeQuadrilateral()
         quads.forEach { (quad) in
             
             var path = quad.path
@@ -179,6 +182,38 @@ class QuadrilateralView: UIView {
         quadLayer.path = nil
         quadLayer.isHidden = true
     }
+    
+    func editNextQuad() -> Bool {
+        for index in 0..<(quads ?? []).count {
+            if quads?[index] == quadSelected {
+                quads?[index].editable = true
+            }
+        }
+        let filter = quads?.filter{$0.editable == false}
+        guard let quad = filter?.first else {
+            cornerViews(hidden: true)
+            return false
+        }
+        quadPrevious = quadSelected
+        quadSelected = quad
+        layoutCornerViews(forQuad: quad)
+        return true
+    }
+    
+    func editPrevQuad() {
+        for index in 0..<(quads ?? []).count {
+            if quads?[index] == quadPrevious {
+                quads?[index].editable = false
+                quadSelected = quadPrevious
+                if index > 0 {
+                    quadPrevious = quads?[index - 1]
+                }
+            }
+        }
+        if let quad = quadSelected {
+            layoutCornerViews(forQuad: quad)
+        }
+    }
 
     // MARK: - Actions
 
@@ -186,15 +221,20 @@ class QuadrilateralView: UIView {
         guard let quads = quads else {
             return
         }
-
         let validPoint = self.validPoint(point, forCornerViewOfSize: cornerView.bounds.size, inView: self)
 
         cornerView.center = validPoint
         var updatedQuads: [Quadrilateral] = []
         quads.forEach { (quad) in
-            let updatedQuad = update(quad, withPosition: validPoint, forCorner: cornerView.position)
-            updatedQuads.append(updatedQuad)
+            if quad == quadSelected && quad.checkPoint(previousPoint ?? point) {
+                let updatedQuad = update(quad, withPosition: validPoint, forCorner: cornerView.position)
+                quadSelected = updatedQuad
+                updatedQuads.append(updatedQuad)
+            } else {
+                updatedQuads.append(quad)
+            }
         }
+        previousPoint = point
         self.quads = updatedQuads
         drawQuad(updatedQuads, animated: false)
     }

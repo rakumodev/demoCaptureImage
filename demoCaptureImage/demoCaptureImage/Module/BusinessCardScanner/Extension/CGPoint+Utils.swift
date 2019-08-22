@@ -57,5 +57,4 @@ extension CGPoint {
 
         return closestCorner
     }
-
 }
