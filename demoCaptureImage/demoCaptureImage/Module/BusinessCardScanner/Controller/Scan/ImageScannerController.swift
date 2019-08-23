@@ -49,6 +49,8 @@ class ImageScannerController: UINavigationController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    var rotationAngle = Measurement<UnitAngle>(value: 0, unit: .degrees)
 
     required init(image: UIImage? = nil, delegate: ImageScannerControllerDelegate? = nil) {
         super.init(rootViewController: ScannerViewController())
@@ -69,22 +71,23 @@ class ImageScannerController: UINavigationController {
             // *** Vision *requires* a completion block to detect rectangles, but it's instant.
             // *** When using Vision, we'll present the normal edit view controller first, then present the updated edit view controller later.
             defer {
-                let editViewController = EditScanViewController(image: image, quads: detectedQuads, rotateImage: false)
+                let editViewController = EditScanViewController(image: image, quads: detectedQuads)
                 setViewControllers([editViewController], animated: false)
             }
-
-            guard let ciImage = CIImage(image: image) else { return }
-
+            
+            rotationAngle.value += 180
+            guard let ciImage = CIImage(image: image.applyingPortraitOrientation().rotated(by: rotationAngle, options: [.flipOnVerticalAxis]) ?? image.applyingPortraitOrientation()) else { return }
             if #available(iOS 11.0, *) {
                 // Use the VisionRectangleDetector on iOS 11 to attempt to find a rectangle from the initial image.
-                VisionRectangleDetector.rectangles(forImage: ciImage) { (quads) in
+                VisionRectangleDetector.rectangles(forImage: ciImage.oriented(.up)) { (quads) in
                     guard let quads = quads else { return }
                     detectedQuads = quads
+
                     for i in detectedQuads.indices {
                         detectedQuads[i].reorganize()
                     }
 
-                    let editViewController = EditScanViewController(image: image, quads: detectedQuads, rotateImage: false)
+                    let editViewController = EditScanViewController(image: image, quads: detectedQuads)
                     self.setViewControllers([editViewController], animated: true)
                 }
             } else {
