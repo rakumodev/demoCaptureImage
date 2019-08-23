@@ -84,7 +84,7 @@ class ImageScannerController: UINavigationController {
                         detectedQuads[i].reorganize()
                     }
 
-                    let editViewController = EditScanViewController(image: image, quads: detectedQuads, rotateImage: false)
+                    let editViewController = EditScanViewController(image: image, quads: detectedQuads)
                     self.setViewControllers([editViewController], animated: true)
                 }
             } else {

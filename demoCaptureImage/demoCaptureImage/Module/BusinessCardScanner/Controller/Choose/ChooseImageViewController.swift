@@ -39,7 +39,6 @@ class ChooseImageViewController: UIViewController {
     }
     
     @IBAction func userTappedDoneButton(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
         finishScan()
     }
     
@@ -50,22 +49,23 @@ class ChooseImageViewController: UIViewController {
             }
             return
         }
-        scannedImages.forEach { (scannedImage) in
-            //Saving image
-            UIImageWriteToSavedPhotosAlbum(scannedImage, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
-        }
-        DispatchQueue.main.async {
-            self.dismiss(animated: true, completion: nil)
-        }
+        //Saving current selected image
+        UIImageWriteToSavedPhotosAlbum(scannedImages[pageControl.currentPage], self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     //Add image to library
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            // we got back an error!
-            debugPrint(error.localizedDescription)
-        } else {
-            debugPrint("Scanned image has been saved")
+        DispatchQueue.main.async {
+            if let error = error {
+                // we got back an error!
+                AlertUtils.showSimpleAlertView(with: "Save error", message: error.localizedDescription)
+            } else {
+                AlertUtils.showYesNoAlertView(with: "Saved!", message: "Do you want to continue ?", self, completion: { (isOK) in
+                    if !isOK {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }
         }
     }
     
