@@ -184,34 +184,45 @@ class QuadrilateralView: UIView {
     }
     
     func editNextQuad() -> Bool {
-        for index in 0..<(quads ?? []).count where quads?[index] == quadSelected {
+        cornerViews(hidden: false)
+        for index in 0..<(quads ?? []).count {
+            if quads?[index].editable == false {
                 quads?[index].editable = true
+                quadPrevious = quads?[index]
+                break
+            }
         }
-        let filter = quads?.filter {$0.editable == false}
-        guard let quad = filter?.first else {
-            cornerViews(hidden: true)
+        let filter = (quads ?? []).filter{$0.editable == false}
+        if filter.count == 0 {
             return false
+        } else {
+            if let quad = filter.first {
+                quadSelected = quad
+                layoutCornerViews(forQuad: quad)
+            }
+            return true
         }
-        quadPrevious = quadSelected
-        quadSelected = quad
-        layoutCornerViews(forQuad: quad)
-        return true
     }
     
     func editPrevQuad() -> Bool {
-        for index in 0..<(quads ?? []).count where quads?[index] == quadPrevious {
-            quads?[index].editable = false
-            quadSelected = quadPrevious
-            if index > 0 {
-                quadPrevious = quads?[index - 1]
-                if let quad = quadSelected {
+        for index in 0..<(quads?.reversed() ?? []).count {
+            if quads?[index].editable == true {
+                quads?[index].editable = false
+                if let quad = quads?[index] {
+                    quadSelected = quad
                     layoutCornerViews(forQuad: quad)
                 }
-            } else {
-                return false
+                let filter = (quads ?? []).filter{$0.editable == true}
+                print("count = \(filter.count)")
+                if index < (quads?.reversed() ?? []).count - 2 {
+                    quadPrevious = quads?[index + 1]
+                    return true
+                } else {
+                    return false
+                }
             }
         }
-        return true
+        return false
     }
 
     // MARK: - Actions
