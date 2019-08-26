@@ -23,12 +23,12 @@ class EditScanViewController: UIViewController {
     }()
 
     lazy var doneButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneEditAction))
+        let button = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(pushReviewController))
         button.tintColor = navigationController?.navigationBar.tintColor
         return button
     }()
     
-    lazy var backButton: UIBarButtonItem = {
+    lazy var prevButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Prev", style: .plain, target: self, action: #selector(prevEditAction))
         button.tintColor = navigationController?.navigationBar.tintColor
         return button
@@ -36,7 +36,7 @@ class EditScanViewController: UIViewController {
     
     lazy var nextButton: UIBarButtonItem = {
         let title = NSLocalizedString("wescan.edit.button.next", tableName: nil, bundle: Bundle(for: EditScanViewController.self), value: "Next", comment: "A generic next button")
-        let button = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(pushReviewController))
+        let button = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(nextEditAction))
         button.tintColor = navigationController?.navigationBar.tintColor
         return button
     }()
@@ -77,11 +77,11 @@ class EditScanViewController: UIViewController {
         setupViews()
         setupConstraints()
         title = NSLocalizedString("wescan.edit.title", tableName: nil, bundle: Bundle(for: EditScanViewController.self), value: "Edit Scan", comment: "The title of the EditScanViewController")
-//        navigationItem.rightBarButtonItem = nextButton
-//        navigationItem.leftBarButtonItem = cancelButton
+        navigationItem.rightBarButtonItem = nextButton
+        navigationItem.leftBarButtonItem = cancelButton
         
-        navigationItem.rightBarButtonItem = doneButton
-        navigationItem.leftBarButtonItem = backButton
+//        navigationItem.rightBarButtonItem = doneButton
+//        navigationItem.leftBarButtonItem = backButton
 
         zoomGestureController = ZoomGestureController(image: image, quadView: quadView)
 
@@ -133,15 +133,17 @@ class EditScanViewController: UIViewController {
     }
 
     // MARK: - Actions
-    @objc func doneEditAction() {
+    @objc func nextEditAction() {
         if quadView.editNextQuad() == false {
-            navigationItem.rightBarButtonItem = nextButton
-            navigationItem.leftBarButtonItem = cancelButton
+            navigationItem.rightBarButtonItem = doneButton
+            navigationItem.leftBarButtonItem = prevButton
         }
     }
 
     @objc func prevEditAction() {
-        quadView.editPrevQuad()
+        if quadView.editPrevQuad() == false {
+            
+        }
     }
     
     @objc func pushReviewController() {

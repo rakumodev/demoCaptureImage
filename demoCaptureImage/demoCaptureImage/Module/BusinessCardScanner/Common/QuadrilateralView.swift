@@ -160,11 +160,11 @@ class QuadrilateralView: UIView {
             }
             combinedPath.addPath(path.cgPath)
         }
-        if animated == true {
-            let pathAnimation = CABasicAnimation(keyPath: "path")
-            pathAnimation.duration = 0.2
-            quadLayer.add(pathAnimation, forKey: "path")
-        }
+//        if animated == false {
+//            let pathAnimation = CABasicAnimation(keyPath: "path")
+//            pathAnimation.duration = 0.2
+//            quadLayer.add(pathAnimation, forKey: "path")
+//        }
         quadLayer.path = combinedPath
         quadLayer.isHidden = false
 
@@ -198,17 +198,20 @@ class QuadrilateralView: UIView {
         return true
     }
     
-    func editPrevQuad() {
+    func editPrevQuad() -> Bool {
         for index in 0..<(quads ?? []).count where quads?[index] == quadPrevious {
             quads?[index].editable = false
             quadSelected = quadPrevious
             if index > 0 {
                 quadPrevious = quads?[index - 1]
+                if let quad = quadSelected {
+                    layoutCornerViews(forQuad: quad)
+                }
+            } else {
+                return false
             }
         }
-        if let quad = quadSelected {
-            layoutCornerViews(forQuad: quad)
-        }
+        return true
     }
 
     // MARK: - Actions
@@ -219,7 +222,7 @@ class QuadrilateralView: UIView {
         }
         let validPoint = self.validPoint(point, forCornerViewOfSize: cornerView.bounds.size, inView: self)
 
-        cornerView.center = validPoint
+         cornerView.center = validPoint
         var updatedQuads: [Quadrilateral] = []
         quads.forEach { (quad) in
             if quad == quadSelected && quad.checkPoint(previousPoint ?? point) {
