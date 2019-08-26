@@ -62,8 +62,10 @@ class EditScanViewController: UIViewController {
     // MARK: - Life Cycle
 
     init(image: UIImage, quads: [Quadrilateral]?, rotateImage: Bool = true) {
-        self.image = rotateImage ? image.applyingPortraitOrientation() : image
+//        self.image = rotateImage ? image.applyingPortraitOrientation() : image
+        self.image = image
         self.quads = quads ?? EditScanViewController.defaultQuad(forImage: image)
+        
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -77,11 +79,13 @@ class EditScanViewController: UIViewController {
         setupViews()
         setupConstraints()
         title = NSLocalizedString("wescan.edit.title", tableName: nil, bundle: Bundle(for: EditScanViewController.self), value: "Edit Scan", comment: "The title of the EditScanViewController")
-        navigationItem.rightBarButtonItem = nextButton
-        navigationItem.leftBarButtonItem = cancelButton
         
-//        navigationItem.rightBarButtonItem = doneButton
-//        navigationItem.leftBarButtonItem = backButton
+        navigationItem.leftBarButtonItem = cancelButton
+        if quads.count > 2 {
+            navigationItem.rightBarButtonItem = nextButton
+        } else {
+            navigationItem.rightBarButtonItem = doneButton
+        }
 
         zoomGestureController = ZoomGestureController(image: image, quadView: quadView)
 
@@ -134,15 +138,16 @@ class EditScanViewController: UIViewController {
 
     // MARK: - Actions
     @objc func nextEditAction() {
+        navigationItem.leftBarButtonItem = prevButton
         if quadView.editNextQuad() == false {
             navigationItem.rightBarButtonItem = doneButton
-            navigationItem.leftBarButtonItem = prevButton
         }
     }
 
     @objc func prevEditAction() {
+        navigationItem.rightBarButtonItem = nextButton
         if quadView.editPrevQuad() == false {
-            
+            navigationItem.leftBarButtonItem = cancelButton
         }
     }
     
