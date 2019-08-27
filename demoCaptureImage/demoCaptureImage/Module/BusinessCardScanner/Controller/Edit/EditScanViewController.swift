@@ -79,7 +79,7 @@ class EditScanViewController: UIViewController {
         title = NSLocalizedString("wescan.edit.title", tableName: nil, bundle: Bundle(for: EditScanViewController.self), value: "Edit Scan", comment: "The title of the EditScanViewController")
         
         navigationItem.leftBarButtonItem = cancelButton
-        if quads.count > 2 {
+        if quads.count > 1 {
             navigationItem.rightBarButtonItem = nextButton
         } else {
             navigationItem.rightBarButtonItem = doneButton
