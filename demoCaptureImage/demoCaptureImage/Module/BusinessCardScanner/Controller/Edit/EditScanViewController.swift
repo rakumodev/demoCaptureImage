@@ -62,10 +62,8 @@ class EditScanViewController: UIViewController {
     // MARK: - Life Cycle
 
     init(image: UIImage, quads: [Quadrilateral]?, rotateImage: Bool = true) {
-//        self.image = rotateImage ? image.applyingPortraitOrientation() : image
-        self.image = image
+        self.image = rotateImage ? image.applyingPortraitOrientation() : image
         self.quads = quads ?? EditScanViewController.defaultQuad(forImage: image)
-        
         super.init(nibName: nil, bundle: nil)
     }
 
